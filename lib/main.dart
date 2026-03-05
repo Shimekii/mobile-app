@@ -1,23 +1,23 @@
-import 'package:air_check/home_page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'app/app_root.dart';
+import 'app/app_viewmodel.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => AppViewModel(),
+      child: MyApp(),
+    ),
+  );
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AirCheck',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          primarySwatch: Colors.blue
-        ),
-      home: const HomePage(),
+      title: 'Flutter MVVM Demo',
+      home: AppRoot(),
     );
   }
 }
