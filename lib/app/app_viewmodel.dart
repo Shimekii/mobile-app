@@ -1,6 +1,11 @@
+import 'package:air_check/services/location_service.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 class AppViewModel extends ChangeNotifier {
+  final LocationService locationService = LocationService();
+  double? latitude;
+  double? longitude;
   bool _isLoading = true;
   bool _isFirstLaunch = true; // проверка, был ли первый запуск
 
@@ -17,6 +22,18 @@ class AppViewModel extends ChangeNotifier {
 
     _isLoading = false;
     notifyListeners();
+  }
+
+  Future<bool> requestLocation() async {
+    bool granted = await locationService.requestPermission();
+
+    if (granted){
+      Position pos = await locationService.getCoordinates();
+      latitude = pos.latitude;
+      longitude = pos.longitude;
+    }
+    notifyListeners();
+    return granted;
   }
 
   void completeOnboarding() { 
