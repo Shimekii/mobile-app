@@ -3,33 +3,53 @@ import 'package:flutter/material.dart';
 class OnboardingPage extends StatelessWidget {
   final String title;
   final String imagePath;
+  final String description;
 
-  const OnboardingPage({required this.title, required this.imagePath, Key? key}) : super(key: key);
+  const OnboardingPage({
+    required this.title, 
+    required this.imagePath, 
+    required this.description,
+    Key? key
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // фон
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(imagePath),
-              fit: BoxFit.cover, // растянуть на весь экран
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 100), // отступ сверху
+            // Картинка с реальными размерами
+            Image.asset(
+              imagePath,
+              width: 158,   // ставишь нужную ширину
+              height: 158,  // ставишь нужную высоту
+              fit: BoxFit.contain, // сохраняет пропорции
             ),
-          ),
-        ),
-        // контент поверх
-        Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 32,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+            SizedBox(height: 20),
+            // Заголовок
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                height: 1,
+              ),
+              textAlign: TextAlign.left,
             ),
-          ),
-        ),
+            SizedBox(height: 32),
+            Text(
+              description,
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.left,
+            )
+          ],
+        )
       ],
     );
   }

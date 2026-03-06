@@ -1,3 +1,4 @@
+import 'package:air_check/features/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -41,50 +42,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 setState(() => currentPage = index);
               },
               itemBuilder: (context, index) {
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 100), // отступ сверху
-                    // Картинка с реальными размерами
-                    Image.asset(
-                      pages[index]["image"]!,
-                      width: 158,   // ставишь нужную ширину
-                      height: 158,  // ставишь нужную высоту
-                      fit: BoxFit.contain, // сохраняет пропорции
-                    ),
-                    SizedBox(height: 20),
-                    // Заголовок
-                    Text(
-                      pages[index]["title"]!,
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        height: 1,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                    SizedBox(height: 32),
-                    Text(
-                      pages[index]["description"]!,
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                      textAlign: TextAlign.left,
-                    )
-                  ],
+                return OnboardingPage(
+                  title: pages[index]["title"]!,
+                  imagePath: pages[index]["image"]!,
+                  description: pages[index]["description"]!,
                 );
               },
             ),
           ),
           // Кнопка "Next / Start" внизу
           Positioned(
-            bottom: 50,
+            bottom: 100,
             left: 0,
             right: 0,
             child: Center(
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(135, 60)
+                ),
                 onPressed: () {
                   if (currentPage == pages.length - 1) {
                     // Последняя страница → HomeScreen
@@ -96,12 +71,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     );
                   }
                 },
-                child: Text(currentPage == pages.length - 1 ? "Начать" : "Понятно"),
+                child: Text(
+                  currentPage == pages.length - 1 ? "Начать" : "Понятно",
+                  style: TextStyle(
+                    fontSize: 22
+                  ),
+                ),
               ),
             ),
           ),
           Positioned(
-            bottom: 20,
+            bottom: 50,
             left: 0,
             right: 0,
             child: Row(
