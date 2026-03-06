@@ -1,4 +1,6 @@
+import 'package:air_check/app/app_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -68,8 +70,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 60),
                   ),
-                  onPressed: () {
-                    
+                  onPressed: () async {
+                    final vm = context.read<AppViewModel>();
+                    bool granted = await vm.requestLocation();
+
+                    if (!mounted) return;
+
+                    if (granted){
+                      Navigator.pushReplacementNamed(context, "/home");
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Разрешение на геолокацию отклонено"))
+                      );
+                    }
                   },
                   child: Text(
                     "Определить местоположение",
