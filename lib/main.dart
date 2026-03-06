@@ -1,7 +1,9 @@
+import 'package:air_check/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app/app_root.dart';
 import 'app/app_viewmodel.dart';
+import 'features/home/welcome_screen.dart';
 
 void main() {
   runApp(
@@ -17,6 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter MVVM Demo',
+      routes: {
+        "/welcome": (context) => WelcomeScreen(),
+        "/home": (context) => HomeScreen(),
+      },
       home: AppRoot(),
     );
   }
