@@ -34,13 +34,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           Container(
             margin: const EdgeInsets.all(16.0),
-          // PageView с фоновыми картинками
             child: PageView.builder(
               controller: _controller,
               itemCount: pages.length,
               onPageChanged: (index) {
-                setState(() => currentPage = index);
+                setState(() => currentPage = index);  
               },
+              // Onboarding Pages
               itemBuilder: (context, index) {
                 return OnboardingPage(
                   title: pages[index]["title"]!,
@@ -63,7 +63,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   if (currentPage == pages.length - 1) {
                     // Последняя страница → HomeScreen
-                    Navigator.pushReplacementNamed(context, "/home");
+                    Navigator.pushReplacementNamed(context, "/welcome");
                   } else {
                     _controller.nextPage(
                       duration: Duration(milliseconds: 300),
