@@ -57,7 +57,10 @@ class AppViewModel extends ChangeNotifier {
       Coordinates coords = Coordinates(pos.latitude, pos.longitude);
       AirQualityData aqd = await airRepository.loadAirQualityByCoord(coords);
       mainCity = City(name!, aqd, coords);
+
+      mainCitySelected = true;
     }
+    await saveMainCity();
     notifyListeners();
     return granted;
   }
@@ -103,6 +106,5 @@ class AppViewModel extends ChangeNotifier {
     await prefs.setString("mainCity_name", mainCity!.name);
     await prefs.setDouble("mainCity_lat", mainCity!.coordinates.lat);
     await prefs.setDouble("mainCity_lon", mainCity!.coordinates.lon);
-    await prefs.setBool("mainCitySelectred", true);
   }
 }
