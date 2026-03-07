@@ -1,3 +1,5 @@
+import 'package:air_check/features/view/no_internet_screen.dart';
+import 'package:air_check/features/view/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app_viewmodel.dart';
@@ -14,8 +16,12 @@ class AppRoot extends StatelessWidget {
           return SplashScreen();
         } else if (vm.isFirstLaunch) {
           return OnboardingScreen();
-        } else {
+        } else if (vm.mainCitySelected) {
           return HomeScreen();
+        } else if (!vm.mainCitySelected){
+          return WelcomeScreen();
+        } else {
+          return NoInternetScreen();
         }
       },
     );
