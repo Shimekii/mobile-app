@@ -20,7 +20,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
+    return Scaffold(  
       body: Stack(
         children: [
           // Фоновая картинка на весь экран
@@ -33,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.all(16.0),
+            margin: EdgeInsets.symmetric(horizontal: width * 0.044),
             child: PageView.builder(
               controller: _controller,
               itemCount: pages.length,
@@ -52,13 +56,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           // Кнопка "Next / Start" внизу
           Positioned(
-            bottom: 100,
+            bottom: height * 0.12,
             left: 0,
             right: 0,
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(135, 60)
+                  minimumSize: Size(width * 0.4, height * 0.07)
                 ),
                 onPressed: () {
                   if (currentPage == pages.length - 1) {
@@ -81,16 +85,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Positioned(
-            bottom: 50,
+            bottom: height * 0.06,
             left: 0,
             right: 0,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(pages.length, (index) => AnimatedContainer(
                   duration: Duration(microseconds: 300),
-                  margin: EdgeInsets.symmetric(horizontal: 15),
-                  width: 15,  
-                  height: 15,
+                  margin: EdgeInsets.symmetric(horizontal: width * 0.03),
+                  width: width * 0.035,  
+                  height: height * 0.035,
                   decoration: BoxDecoration(
                     color: currentPage == index ? Color(0xFFFF8888): Colors.white,
                     shape: BoxShape.circle,

@@ -12,6 +12,10 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen>{
   @override
   Widget build(BuildContext context){
+    final size = MediaQuery.of(context).size;
+    final width = size.width;
+    final height = size.height;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -24,24 +28,24 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
             ),
           ),
           Container(
-            margin: const EdgeInsets.all(16.0),
+            margin: EdgeInsets.symmetric(horizontal: width * 0.044),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 200),
+                SizedBox(height: height * 0.25),
                 Text(
                   "ДОБРО ПОЖАЛОВАТЬ!",
                   style: TextStyle(
-                    fontSize: 32,
+                    fontSize: width * 0.072,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: height * 0.02),
                 Text(
                   "Выберите способ определения местоположения, чтобы начать отслеживание качества воздуха.",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: width * 0.048,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.left,
@@ -50,25 +54,25 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
             ),
           ),
           Positioned(
-            bottom: 80,
-            left: 20,
-            right: 20,
+            bottom: height * 0.1,
+            left: width * 0.056,
+            right: width * 0.056,
             child: Column(
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 60),
+                    minimumSize: Size(double.infinity, height * 0.075),
                   ),
                   onPressed: () {},
                   child: Text(
                     "Выбрать город",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: width * 0.05),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: height * 0.0375),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 60),
+                    minimumSize: Size(double.infinity, height * 0.075),
                   ),
                   onPressed: () async {
                     final vm = context.read<AppViewModel>();
@@ -87,7 +91,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
                   child: Text(
                     "Определить местоположение",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: width * 0.05,
                     ),
                   ),
                 )
