@@ -1,5 +1,7 @@
+import 'package:air_check/app/app_viewmodel.dart';
 import 'package:air_check/features/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class OnboardingScreen extends StatefulWidget {
   @override
@@ -64,10 +66,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(width * 0.4, height * 0.07)
                 ),
-                onPressed: () {
+                onPressed: () async {
+                  final vm = context.read<AppViewModel>();
+                  bool isConnected = vm.hasInternet;
                   if (currentPage == pages.length - 1) {
                     // Последняя страница → HomeScreen
-                    Navigator.pushReplacementNamed(context, "/welcome");
+                    if (isConnected) {
+                      Navigator.pushReplacementNamed(context, "/welcome");
+                    } else {
+                      Navigator.pushReplacementNamed(context, "/noInternet");
+                    }
                   } else {
                     _controller.nextPage(
                       duration: Duration(milliseconds: 300),
