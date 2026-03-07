@@ -16,12 +16,12 @@ class AppRoot extends StatelessWidget {
           return SplashScreen();
         } else if (vm.isFirstLaunch) {
           return OnboardingScreen();
-        } else if (vm.mainCitySelected) {
-          return HomeScreen();
-        } else if (!vm.mainCitySelected){
-          return WelcomeScreen();
-        } else {
+        } else if (!vm.hasInternet) {
           return NoInternetScreen();
+        } else if (vm.mainCitySelected){
+          return HomeScreen();
+        } else {
+          return WelcomeScreen();
         }
       },
     );
