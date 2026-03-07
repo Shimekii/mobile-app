@@ -1,4 +1,5 @@
 import 'package:air_check/features/home/home_screen.dart';
+import 'package:air_check/views/no_internet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app/app_root.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/welcome": (context) => WelcomeScreen(),
         "/home": (context) => HomeScreen(),
+        "/noInternet": (context) => NoInternetScreen(),
       },
       home: AppRoot(),
     );
