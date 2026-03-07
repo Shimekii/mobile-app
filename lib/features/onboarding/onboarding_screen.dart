@@ -68,14 +68,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 onPressed: () async {
                   final vm = context.read<AppViewModel>();
-                  bool isConnected = vm.hasInternet;
+                  //bool isConnected = vm.hasInternet;
                   if (currentPage == pages.length - 1) {
+                    vm.completeOnboarding();
                     // Последняя страница → HomeScreen
-                    if (isConnected) {
+                    /*if (isConnected) {
                       Navigator.pushReplacementNamed(context, "/welcome");
                     } else {
                       Navigator.pushReplacementNamed(context, "/noInternet");
-                    }
+                    }*/
                   } else {
                     _controller.nextPage(
                       duration: Duration(milliseconds: 300),
