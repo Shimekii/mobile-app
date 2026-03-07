@@ -63,7 +63,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, height * 0.075),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, "/addMainCity");
+                  },
                   child: Text(
                     "Выбрать город",
                     style: TextStyle(fontSize: width * 0.05),
