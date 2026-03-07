@@ -1,3 +1,4 @@
+import 'package:air_check/features/view/select_city_viewmodel.dart';
 import 'package:air_check/features/view/home_screen.dart';
 import 'package:air_check/features/view/no_internet_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         "/welcome": (context) => WelcomeScreen(),
         "/home": (context) => HomeScreen(),
         "/noInternet": (context) => NoInternetScreen(),
+        "/addMainCity": (context) => SelectCityView()
       },
       home: AppRoot(),
     );
