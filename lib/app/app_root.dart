@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'app_viewmodel.dart';
 import '../features/splash/splash_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
-import '../features/home/home_screen.dart';
+import '../features/view/home_screen.dart';
 
 class AppRoot extends StatelessWidget {
   @override
