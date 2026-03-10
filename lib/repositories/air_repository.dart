@@ -1,4 +1,3 @@
-import 'package:air_check/models/city.dart';
 import 'package:air_check/models/coordinates.dart';
 import 'package:air_check/repositories/air_quality_data.dart';
 import 'package:air_check/services/air_service.dart';

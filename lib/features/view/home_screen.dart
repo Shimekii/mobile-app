@@ -1,16 +1,15 @@
 import 'package:air_check/app/app_viewmodel.dart';
-import 'package:air_check/models/city.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final width = size.width;
     final height = size.height;
-    final vm = Provider.of<AppViewModel>(context);
-    final mainCity = vm.mainCity;
     return Scaffold(
       body: Stack(
         children: [
