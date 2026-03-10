@@ -33,24 +33,30 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // Город + иконка
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            cityName,
-                            style: TextStyle(
-                              fontSize: width * 0.089,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                      GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onTap: () {
+                          Navigator.pushNamed(context, "/addMainCity");
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              cityName,
+                              style: TextStyle(
+                                fontSize: width * 0.089,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: width * 0.01),
-                          Icon(
-                            Icons.location_on,
-                            color: Colors.white,
-                            size: width * 0.07,
-                          ),
-                        ],
+                            SizedBox(width: width * 0.01),
+                            Icon(
+                              Icons.location_on,
+                              color: Colors.white,
+                              size: width * 0.07,
+                            ),
+                          ],
+                        ),
                       ),
 
                       SizedBox(height: height * 0.02),
