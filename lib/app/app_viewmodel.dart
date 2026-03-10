@@ -1,4 +1,3 @@
-import 'package:air_check/main.dart';
 import 'package:air_check/models/city.dart';
 import 'package:air_check/models/coordinates.dart';
 import 'package:air_check/repositories/air_quality_data.dart';
@@ -72,12 +71,6 @@ class AppViewModel extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isFirstLaunch', false);
     // Здесь можно сохранить флаг в SharedPreferences
-  }
-
-  Future<void> isSelect() async{
-    mainCitySelected = true;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool("mainCitySelected", true);
   }
 
   void setMainCity(City city){
