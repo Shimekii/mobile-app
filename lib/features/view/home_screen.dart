@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                             child: Text(
                               vm.mainCity!.aqd.aqi.toString(),
                               style: TextStyle(
-                                fontSize: 200,
+                                fontSize: 100,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             //crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: height * 0.09),
+                              SizedBox(height: height * 0.04),
                               // Индикатор качества воздуха
                               Container(
                                 padding: EdgeInsets.symmetric(
@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                               ),
 
                               // Фиксированный отступ между индикатором и подписью AQI
-                              SizedBox(height: height * 0.07), // 200 — размер цифры, 14 — размер индикатора
+                              SizedBox(height: height * 0.014), // 100 — размер цифры, 14 — размер индикатора
 
                               Text(
                                 "AQI",
@@ -122,8 +122,119 @@ class HomeScreen extends StatelessWidget {
               }
             ),
           ),
-        ],
-      ),
+
+          //Таблица с прогнозом
+          Positioned(
+            bottom: height * 0.1,
+            left: width * 0.05,
+            right: width * 0.05,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                vertical: height * 0.02,
+                horizontal: width * 0.04,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.black.withAlpha(150),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsGeometry.only(left: width * 0.02, bottom: height * 0.015),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_today,
+                          color: Colors.white,
+                          size: width * 0.05,
+                        ),
+                        SizedBox(width: width * 0.02),
+                        Text(
+                          "Прогноз на 5 дней",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: width * 0.045,
+                            fontWeight: FontWeight.w500,
+                          )
+                        )
+                      ]
+                    )
+                  ),
+
+                  //Отдельные строчки
+                  ...List.generate(5, (index) {
+                    final days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+                    final today = DateTime.now().weekday - 1;
+                    final dayIndex = (today + index) % 7;
+                    //Тестовые значения
+                    final mockAqi = [23, 34, 55, 80, 112][index];
+
+                    //Цвет в соответствии с уровнем AQI
+                    Color getAqiColor(int aqi) {
+                      if (aqi <= 50) return Colors.green;
+                      if (aqi <= 100) return Colors.yellow;
+                      if (aqi <= 150) return Colors.orange;
+                      if (aqi <= 200) return Colors.red;
+                      if (aqi <= 300) return Colors.purple;
+                      return Colors.brown;
+                    }
+
+                    return Container(
+                      margin: EdgeInsets.only(bottom: height * 0.015),
+                      padding: EdgeInsets.symmetric(
+                        vertical: height * 0.01,
+                        horizontal: width * 0.05,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withAlpha(50),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: [
+                          //День недели
+                          Text(
+                            days[dayIndex],
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: width * 0.045,
+                              fontWeight: FontWeight.w500
+                            ),
+                          ),
+
+                          const Spacer(),
+                          
+                          //Цветовой индикатор
+                          CircleAvatar(
+                            radius: width * 0.02,
+                            backgroundColor: getAqiColor(mockAqi),
+                          ),
+
+                          SizedBox(width: width * 0.02),
+
+                          //Уровень AQI
+                          SizedBox(
+                            width: width * 0.2,
+                            child: Text(
+                              "$mockAqi AQI",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: width * 0.05,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.right,
+                            )
+                          )
+                        ]
+                      )
+                    );
+                  })
+                ]
+              )
+            )
+          )
+        ]
+      )
     );
   }
 } 
