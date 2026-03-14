@@ -12,10 +12,6 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen>{
   @override
   Widget build(BuildContext context){
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -28,24 +24,24 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: width * 0.044),
+            margin: EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: height * 0.25),
+                SizedBox(height: 200),
                 Text(
                   "ДОБРО ПОЖАЛОВАТЬ!",
                   style: TextStyle(
-                    fontSize: width * 0.072,
+                    fontSize: 26,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: height * 0.02),
+                SizedBox(height: 16),
                 Text(
                   "Выберите способ определения местоположения, чтобы начать отслеживание качества воздуха.",
                   style: TextStyle(
-                    fontSize: width * 0.048,
+                    fontSize: 24,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.left,
@@ -54,27 +50,27 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
             ),
           ),
           Positioned(
-            bottom: height * 0.1,
-            left: width * 0.056,
-            right: width * 0.056,
+            bottom: 80,
+            left: 20,
+            right: 20,
             child: Column(
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, height * 0.075),
+                    minimumSize: Size(double.infinity, 60),
                   ),
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, "/addMainCity");
                   },
                   child: Text(
                     "Выбрать город",
-                    style: TextStyle(fontSize: width * 0.05),
+                    style: TextStyle(fontSize: 18),
                   ),
                 ),
-                SizedBox(height: height * 0.0375),
+                SizedBox(height: 30),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, height * 0.075),
+                    minimumSize: Size(double.infinity, 60),
                   ),
                   onPressed: () async {
                     final vm = context.read<AppViewModel>();
@@ -93,7 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>{
                   child: Text(
                     "Определить местоположение",
                     style: TextStyle(
-                      fontSize: width * 0.05,
+                      fontSize: 18,
                     ),
                   ),
                 )
