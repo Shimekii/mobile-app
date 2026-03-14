@@ -22,10 +22,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
-
     return Scaffold(  
       body: Stack(
         children: [
@@ -39,7 +35,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: width * 0.044),
+            margin: EdgeInsets.symmetric(horizontal: 16),
             child: PageView.builder(
               controller: _controller,
               itemCount: pages.length,
@@ -58,13 +54,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           // Кнопка "Next / Start" внизу
           Positioned(
-            bottom: height * 0.12,
+            bottom: 96,
             left: 0,
             right: 0,
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(width * 0.4, height * 0.07)
+                  minimumSize: Size(144, 56)
                 ),
                 onPressed: () async {
                   final vm = context.read<AppViewModel>();
@@ -94,16 +90,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           Positioned(
-            bottom: height * 0.06,
+            bottom: 48,
             left: 0,
             right: 0,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(pages.length, (index) => AnimatedContainer(
                   duration: Duration(microseconds: 300),
-                  margin: EdgeInsets.symmetric(horizontal: width * 0.03),
-                  width: width * 0.035,  
-                  height: height * 0.035,
+                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  width: 12,  
+                  height: 28,
                   decoration: BoxDecoration(
                     color: currentPage == index ? Color(0xFFFF8888): Colors.white,
                     shape: BoxShape.circle,

@@ -10,9 +10,6 @@ class NoInternetScreen extends StatefulWidget {
 class _NoInternetScreenState extends State<NoInternetScreen>{
   @override
   Widget build(BuildContext context){
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
 
     return Scaffold(
       body: Stack(
@@ -29,21 +26,21 @@ class _NoInternetScreenState extends State<NoInternetScreen>{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: height * 0.3),
+              SizedBox(height: 240),
               Row(
                 children: [
                   Text(
                     "ОШИБКА!",
                     style: TextStyle(
-                      fontSize: width * 0.089,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(width: width * 0.033),
+                  SizedBox(width: 12),
                   Container(
-                    width: width * 0.11,
-                    height: height * 0.11,
+                    width: 40,
+                    height: 88,
                     decoration: BoxDecoration(
                       color: Colors.red,
                       shape: BoxShape.circle,
@@ -54,14 +51,14 @@ class _NoInternetScreenState extends State<NoInternetScreen>{
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: width * 0.067,
+                          fontSize: 24,
                         ),
                       ),
                     ),
                   ),
                 ]
               ),
-              SizedBox(width: width * 0.033),
+              SizedBox(width: 12),
               
             ],
           ),
@@ -72,7 +69,7 @@ class _NoInternetScreenState extends State<NoInternetScreen>{
               Text(
                 "Отсутствует подключение к интернету",
                 style: TextStyle(
-                  fontSize: width * 0.089,
+                  fontSize: 32,
                   color: Colors.white,
                   decoration: TextDecoration.underline,
                 ),

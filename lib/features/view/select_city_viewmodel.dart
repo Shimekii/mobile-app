@@ -11,9 +11,6 @@ class SelectCityView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
     final cityRepository = CityRepository();
     final cityService = CityService();
 
@@ -31,9 +28,9 @@ class SelectCityView extends StatelessWidget {
           ),
           Column(
             children: [
-              SizedBox(height: height * 0.0875),
+              SizedBox(height: 70),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: width * 0.044),
+                margin: EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Введите название города",
@@ -52,12 +49,12 @@ class SelectCityView extends StatelessWidget {
                   ),
                 )
               ),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: 40),
               Expanded(
                 child: Container(
                   //height: height * 0.9,
-                  margin: EdgeInsets.symmetric(horizontal: width * 0.044),
-                  padding: EdgeInsets.symmetric(vertical: height * 0.01),
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(vertical: 8),
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 0, 0, 0.23),
                     borderRadius: BorderRadius.circular(25),
@@ -86,12 +83,12 @@ class SelectCityView extends StatelessWidget {
                         },
                         child: Container(
                           margin: EdgeInsets.symmetric(
-                            horizontal: width * 0.028,
-                            vertical: height * 0.004375,
+                            horizontal: 10,
+                            vertical: 3.5,
                           ),
                           padding: EdgeInsets.symmetric(
-                            vertical: height * 0.01875,
-                            horizontal: width * 0.044,
+                            vertical: 15,
+                            horizontal: 16,
                           ),
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(255, 255, 255, 0.2),
@@ -101,7 +98,7 @@ class SelectCityView extends StatelessWidget {
                             city,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: width * 0.044,
+                              fontSize: 16,
                             ),
                           ),
                         )

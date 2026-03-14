@@ -14,40 +14,36 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final height = size.height;
-    final width = size.width;
-
     return Stack(
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: height * 0.05), // отступ сверху
+            SizedBox(height: 40), // отступ сверху
             // Картинка с реальными размерами
             Image.asset(
               imagePath,
-              width: width * 0.4,   // ставишь нужную ширину
-              height: height * 0.4,  // ставишь нужную высоту
+              width: 144,   // ставишь нужную ширину
+              height: 320,  // ставишь нужную высоту
               fit: BoxFit.contain, // сохраняет пропорции
             ),
-            SizedBox(height: height * 0.015),
+            SizedBox(height: 12),
             // Заголовок
             Text(
               title,
               style: TextStyle(
-                fontSize: width * 0.075,
+                fontSize: 27,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 height: 1,
               ),
               textAlign: TextAlign.left,
             ),
-            SizedBox(height: height * 0.04),
+            SizedBox(height: 32),
             Text(
               description,
               style: TextStyle(
-                fontSize: width * 0.05,
+                fontSize: 18,
                 color: Colors.white,
               ),
               textAlign: TextAlign.left,
