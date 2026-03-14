@@ -7,9 +7,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final width = size.width;
-    final height = size.height;
     return Scaffold(
       body: Stack(
         children: [
@@ -22,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: height * 0.13,
+            top: 105,
             left: 0,
             right: 0,
             child: Consumer<AppViewModel>(
@@ -44,22 +41,22 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               cityName,
                               style: TextStyle(
-                                fontSize: width * 0.089,
+                                fontSize: 32,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(width: width * 0.01),
+                            SizedBox(width: 4),
                             Icon(
                               Icons.location_on,
                               color: Colors.white,
-                              size: width * 0.07,
+                              size: 24,
                             ),
                           ],
                         ),
                       ),
 
-                      SizedBox(height: height * 0.02),
+                      SizedBox(height: 16),
 
                       // Цифра AQI + колонка справа
                       Row(
@@ -79,19 +76,19 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
 
-                          SizedBox(width: width * 0.02),
+                          SizedBox(width: 8),
 
                           // Колонка справа с индикатором и подписью AQI
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             //crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              SizedBox(height: height * 0.04),
+                              SizedBox(height: 32),
                               // Индикатор качества воздуха
                               Container(
                                 padding: EdgeInsets.symmetric(
-                                  vertical: height * 0.0025,
-                                  horizontal: width * 0.025
+                                  vertical: 2,
+                                  horizontal: 10
                                   ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
@@ -100,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                                 child: Text(
                                   "ХОРОШО", // "Хорошо"
                                   style: TextStyle(
-                                    fontSize: width * 0.039,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
                                   ),
@@ -108,12 +105,12 @@ class HomeScreen extends StatelessWidget {
                               ),
 
                               // Фиксированный отступ между индикатором и подписью AQI
-                              SizedBox(height: height * 0.014), // 100 — размер цифры, 14 — размер индикатора
+                              SizedBox(height: 12), // 100 — размер цифры, 14 — размер индикатора
 
                               Text(
                                 "AQI",
                                 style: TextStyle(
-                                  fontSize: width * 0.11,
+                                  fontSize: 40,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold
                                 ),
@@ -131,36 +128,36 @@ class HomeScreen extends StatelessWidget {
 
           //Таблица с прогнозом
           Positioned(
-            bottom: height * 0.1,
-            left: width * 0.05,
-            right: width * 0.05,
+            bottom: 80,
+            left: 18,
+            right: 18,
             child: Container(
               padding: EdgeInsets.symmetric(
-                vertical: height * 0.02,
-                horizontal: width * 0.04,
+                vertical: 20,
+                horizontal: 16,
               ),
               decoration: BoxDecoration(
-                color: Colors.black.withAlpha(150),
+                color: Color.fromARGB(59, 0, 0, 0),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsGeometry.only(left: width * 0.02, bottom: height * 0.015),
+                    padding: EdgeInsetsGeometry.only(left: 8, bottom: 12),
                     child: Row(
                       children: [
                         Icon(
                           Icons.calendar_today,
                           color: Colors.white,
-                          size: width * 0.05,
+                          size: 20,
                         ),
-                        SizedBox(width: width * 0.02),
+                        //SizedBox(width: width * 0.02),
                         Text(
                           "Прогноз на 5 дней",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: width * 0.045,
+                            fontSize: 14,
                             fontWeight: FontWeight.w500,
                           )
                         )
@@ -187,10 +184,10 @@ class HomeScreen extends StatelessWidget {
                     }
 
                     return Container(
-                      margin: EdgeInsets.only(bottom: height * 0.015),
+                      margin: EdgeInsets.only(bottom: 12),
                       padding: EdgeInsets.symmetric(
-                        vertical: height * 0.01,
-                        horizontal: width * 0.05,
+                        vertical: 8,
+                        horizontal: 18,
                       ),
                       decoration: BoxDecoration(
                         color: Colors.white.withAlpha(50),
@@ -203,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                             days[dayIndex],
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: width * 0.045,
+                              fontSize: 16,
                               fontWeight: FontWeight.w500
                             ),
                           ),
@@ -212,20 +209,20 @@ class HomeScreen extends StatelessWidget {
                           
                           //Цветовой индикатор
                           CircleAvatar(
-                            radius: width * 0.02,
+                            radius: 8,
                             backgroundColor: getAqiColor(mockAqi),
                           ),
 
-                          SizedBox(width: width * 0.02),
+                          SizedBox(width: 8),
 
                           //Уровень AQI
                           SizedBox(
-                            width: width * 0.2,
+                            width: 72,
                             child: Text(
                               "$mockAqi AQI",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: width * 0.05,
+                                fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.right,
