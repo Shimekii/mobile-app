@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлены точки-индикаторы страниц для навигации по экрану">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,9 @@
     &quot;accountId&quot;: &quot;abdba328-a208-451b-94e9-2adf809df015&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -130,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773754035951</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="добавлены точки-индикаторы страниц для навигации по экрану">
+      <option name="closed" value="true" />
+      <created>1773754640463</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773754640463</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">

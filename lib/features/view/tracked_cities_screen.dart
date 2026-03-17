@@ -7,14 +7,18 @@ class TrackedCitiesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Center(
-        child: Text(
-          "Отслеживаемые города",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
+      body: Stack(
+        children: [
+          // фон
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/onboarding_background.jpeg"),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
