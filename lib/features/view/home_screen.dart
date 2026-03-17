@@ -271,7 +271,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // Индикатор
           Positioned(
-            bottom: 20,
+            bottom: 30,
             left: 0,
             right: 0,
             child: Row(

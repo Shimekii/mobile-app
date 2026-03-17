@@ -50,7 +50,7 @@ class TrackedCitiesScreen extends StatelessWidget {
               Expanded(
                 child: Container(
                   margin: EdgeInsets.fromLTRB(16, 0, 16, 80),
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                  padding: EdgeInsets.symmetric(vertical: 8),
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 0, 0, 0.23),
                     borderRadius: BorderRadius.circular(25),
@@ -68,7 +68,7 @@ class TrackedCitiesScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
 
-                      SizedBox(height: 12),
+                      SizedBox(height: 6),
 
                       // список городов отслеживаемых
                       Expanded(
@@ -92,6 +92,20 @@ class TrackedCitiesScreen extends StatelessWidget {
       {"name": "Томск", "aqi": 23},
       {"name": "Москва", "aqi": 80},
       {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
+      {"name": "Новосибирск", "aqi": 55},
     ];
 
     Color getAqiColor(int aqi) {
@@ -104,6 +118,7 @@ class TrackedCitiesScreen extends StatelessWidget {
     }
 
     return ListView.builder(
+      padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
       itemCount: mockCities.length,
       itemBuilder: (context, index) {
         final city = mockCities[index];
