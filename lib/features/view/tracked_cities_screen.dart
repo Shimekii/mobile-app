@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'select_city_viewmodel.dart';
+import 'package:provider/provider.dart';
+import 'package:air_check/app/app_viewmodel.dart';
 
 class TrackedCitiesScreen extends StatelessWidget {
   const TrackedCitiesScreen({super.key});
@@ -32,7 +35,12 @@ class TrackedCitiesScreen extends StatelessWidget {
                     Spacer(),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/addMainCity");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => SelectCityView(isSelectingForTracking: true),
+                          ),
+                        );
                       },
                       child: Icon(
                         Icons.add,
@@ -73,7 +81,7 @@ class TrackedCitiesScreen extends StatelessWidget {
                       // список городов отслеживаемых
                       Expanded(
                         // child: Container(), // пока пусто
-                        child: _buildCitiesList(),
+                        child: _buildCitiesList(context),
                       )
                     ],
                   ),
@@ -86,27 +94,9 @@ class TrackedCitiesScreen extends StatelessWidget {
     );
   }
 
-  // пока что мок
-  Widget _buildCitiesList() {
-    final mockCities = [
-      {"name": "Томск", "aqi": 23},
-      {"name": "Москва", "aqi": 80},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-      {"name": "Новосибирск", "aqi": 55},
-    ];
+  Widget _buildCitiesList(BuildContext context) {
+    final vm = Provider.of<AppViewModel>(context);
+    final cities = vm.trackedCities;
 
     Color getAqiColor(int aqi) {
       if (aqi <= 50) return Colors.green;
@@ -119,9 +109,9 @@ class TrackedCitiesScreen extends StatelessWidget {
 
     return ListView.builder(
       padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
-      itemCount: mockCities.length,
+      itemCount: cities.length,
       itemBuilder: (context, index) {
-        final city = mockCities[index];
+        final city = cities[index];
 
         return Container(
           margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
@@ -134,7 +124,7 @@ class TrackedCitiesScreen extends StatelessWidget {
             children: [
               // название города
               Text(
-                city["name"].toString(),
+                city.name,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
@@ -146,14 +136,14 @@ class TrackedCitiesScreen extends StatelessWidget {
               // кружок-индикатор
               CircleAvatar(
                 radius: 8,
-                backgroundColor: getAqiColor(city["aqi"] as int),
+                backgroundColor: getAqiColor(city.aqd.aqi),
               ),
 
               SizedBox(width: 8),
 
               // AQI
               Text(
-                "${city["aqi"]} AQI",
+                "${city.aqd.aqi} AQI",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,

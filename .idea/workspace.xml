@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/app_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/app_viewmodel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773772632954</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся">
+      <option name="closed" value="true" />
+      <created>1773772941158</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1773772941158</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -229,6 +236,7 @@
     <MESSAGE value="исправлено отображение содержимого списка отслеживаемых городов" />
     <MESSAGE value="исправлено/добавлено margin/padding для некоторых элементов" />
     <MESSAGE value="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города" />
+    <MESSAGE value="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся" />
   </component>
 </project>
