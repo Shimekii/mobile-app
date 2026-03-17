@@ -107,6 +107,15 @@ class TrackedCitiesScreen extends StatelessWidget {
       return Colors.brown;
     }
 
+    if (cities.isEmpty) {
+      return Center(
+        child: Text(
+          "Пока нет добавленных городов для отслеживания",
+          style: TextStyle(color: Colors.white),
+        ),
+      );
+    }
+
     return ListView.builder(
       padding: EdgeInsets.symmetric(vertical: 2, horizontal: 12),
       itemCount: cities.length,

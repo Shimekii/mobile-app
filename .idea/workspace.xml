@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
     </list>
@@ -213,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773772941158</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного">
+      <option name="closed" value="true" />
+      <created>1773774135996</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1773774135996</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -237,6 +245,7 @@
     <MESSAGE value="исправлено/добавлено margin/padding для некоторых элементов" />
     <MESSAGE value="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города" />
     <MESSAGE value="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся" />
+    <MESSAGE value="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного" />
+    <option name="LAST_COMMIT_MESSAGE" value="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного" />
   </component>
 </project>
