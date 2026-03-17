@@ -72,8 +72,8 @@ class TrackedCitiesScreen extends StatelessWidget {
 
                       // список городов отслеживаемых
                       Expanded(
-                        child: Container(), // пока пусто
-                        // child: _buildCitiesList(),
+                        // child: Container(), // пока пусто
+                        child: _buildCitiesList(),
                       )
                     ],
                   ),
@@ -83,6 +83,33 @@ class TrackedCitiesScreen extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  // пока что мок
+  Widget _buildCitiesList() {
+    final mockCities = [
+      {"name": "Томск", "aqi": 23},
+      {"name": "Москва", "aqi": 80},
+      {"name": "Новосибирск", "aqi": 55},
+    ];
+
+    Color getAqiColor(int aqi) {
+      if (aqi <= 50) return Colors.green;
+      if (aqi <= 100) return Colors.yellow;
+      if (aqi <= 150) return Colors.orange;
+      if (aqi <= 200) return Colors.red;
+      if (aqi <= 300) return Colors.purple;
+      return Colors.brown;
+    }
+
+    return ListView.builder(
+      itemCount: mockCities.length,
+      itemBuilder: (context, index) {
+        final city = mockCities[index];
+
+        return Container();
+      },
     );
   }
 }
