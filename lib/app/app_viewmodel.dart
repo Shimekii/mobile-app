@@ -24,6 +24,8 @@ class AppViewModel extends ChangeNotifier {
 
   City? mainCity;
 
+  List<City> trackedCities = []; // список отслеживаемых городов
+
   Future<void> initializeApp() async {
     // Имитируем загрузку
     await Future.delayed(Duration(seconds: 2));
@@ -75,6 +77,17 @@ class AppViewModel extends ChangeNotifier {
 
   void setMainCity(City city){
     mainCity = city;
+    notifyListeners();
+  }
+
+  void addTrackedCity(City city) {
+    final exists = trackedCities.any((c) => c.name == city.name);
+
+    if (exists) {
+      return;
+    }
+
+    trackedCities.add(city);
     notifyListeners();
   }
 

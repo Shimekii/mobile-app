@@ -83,7 +83,7 @@ class SelectCityView extends StatelessWidget {
                             final newCity = City(city, AirQualityData.empty(), coords);
                             if (isSelectingForTracking) {
                               // добавление в список отслеживаемых городов
-                              // vm.addTrackedCity(newCity);
+                              vm.addTrackedCity(newCity);
                               Navigator.pop(context);
                             }
                             else
