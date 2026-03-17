@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773139190978</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;">
+      <option name="closed" value="true" />
+      <created>1773726325032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773726325032</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -108,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города" />
+    <MESSAGE value="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;" />
   </component>
 </project>
