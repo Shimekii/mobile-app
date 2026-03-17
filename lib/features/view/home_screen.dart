@@ -3,20 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'tracked_cities_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        children: [
-          _MainHomeContent(),
-          TrackedCitiesScreen(),
-        ],
-      )
-    );
-  }
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _MainHomeContent extends StatelessWidget {
@@ -251,6 +242,62 @@ class _MainHomeContent extends StatelessWidget {
               )
           )
         ]
+    );
+  }
+}
+
+
+class _HomeScreenState extends State<HomeScreen> {
+  final PageController _controller = PageController();
+  int currentPage = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView(
+            controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                currentPage = index;
+              });
+            },
+            children: [
+              _MainHomeContent(),
+              TrackedCitiesScreen(),
+            ],
+          ),
+
+          // Индикатор
+          Positioned(
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildDot(0),
+                SizedBox(width: 8),
+                _buildDot(1),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDot(int index) {
+    return Container(
+      width: currentPage == index ? 10 : 8,
+      height: currentPage == index ? 10 : 8,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: currentPage == index
+            ? Colors.white
+            : Colors.white.withValues(alpha: 0.5),
+      ),
     );
   }
 }
