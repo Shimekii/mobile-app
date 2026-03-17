@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;">
-      <change afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлен пустой экран отслеживаемых городов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/home_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773726433925</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="добавлен пустой экран отслеживаемых городов">
+      <option name="closed" value="true" />
+      <created>1773753485364</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773753485364</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -126,6 +134,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города" />
     <MESSAGE value="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;" />
+    <MESSAGE value="добавлен пустой экран отслеживаемых городов" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен пустой экран отслеживаемых городов" />
   </component>
 </project>
