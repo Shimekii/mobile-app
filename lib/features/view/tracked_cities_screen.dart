@@ -108,7 +108,46 @@ class TrackedCitiesScreen extends StatelessWidget {
       itemBuilder: (context, index) {
         final city = mockCities[index];
 
-        return Container();
+        return Container(
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+          decoration: BoxDecoration(
+            color: Colors.white.withAlpha(50),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              // название города
+              Text(
+                city["name"].toString(),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
+
+              Spacer(),
+
+              // кружок-индикатор
+              CircleAvatar(
+                radius: 8,
+                backgroundColor: getAqiColor(city["aqi"] as int),
+              ),
+
+              SizedBox(width: 8),
+
+              // AQI
+              Text(
+                "${city["aqi"]} AQI",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        );
       },
     );
   }

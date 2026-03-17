@@ -173,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773762012008</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="добавлен виджет для списка городов на плашке, временный мок и сопоставление цветов соответствующему показателю AQI">
+      <option name="closed" value="true" />
+      <created>1773762517806</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773762517806</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
