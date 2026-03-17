@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="исправлено отображение содержимого списка отслеживаемых городов">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="исправлено/добавлено margin/padding для некоторых элементов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773762598785</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="исправлено/добавлено margin/padding для некоторых элементов">
+      <option name="closed" value="true" />
+      <created>1773764761632</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773764761632</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -211,6 +218,7 @@
     <MESSAGE value="плашка исправлена - отступ снизу, margin" />
     <MESSAGE value="добавлен виджет для списка городов на плашке, временный мок и сопоставление цветов соответствующему показателю AQI" />
     <MESSAGE value="исправлено отображение содержимого списка отслеживаемых городов" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлено отображение содержимого списка отслеживаемых городов" />
+    <MESSAGE value="исправлено/добавлено margin/padding для некоторых элементов" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлено/добавлено margin/padding для некоторых элементов" />
   </component>
 </project>

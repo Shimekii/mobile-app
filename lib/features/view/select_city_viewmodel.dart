@@ -7,7 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SelectCityView extends StatelessWidget {
-  const SelectCityView({super.key});
+  final bool isSelectingForTracking; // флаг дял переключения выбора городов между 'основным' и 'добавлением дополнительного для отслеживания'
+
+  const SelectCityView({
+    super.key,
+    this.isSelectingForTracking = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -76,10 +81,19 @@ class SelectCityView extends StatelessWidget {
                             }
 
                             final newCity = City(city, AirQualityData.empty(), coords);
-                            vm.setMainCity(newCity);
-                            vm.getCurrentAqi();
-                            await vm.saveMainCity();
-                            Navigator.pushReplacementNamed(context, "/home");
+                            if (isSelectingForTracking) {
+                              // добавление в список отслеживаемых городов
+                              // vm.addTrackedCity(newCity);
+                              Navigator.pop(context);
+                            }
+                            else
+                            {
+                              // основной город
+                              vm.setMainCity(newCity);
+                              vm.getCurrentAqi();
+                              await vm.saveMainCity();
+                              Navigator.pushReplacementNamed(context, "/home");
+                            }
                         },
                         child: Container(
                           margin: EdgeInsets.symmetric(
