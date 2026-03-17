@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлен фон">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлен заголовок списка и кнопка добавления города в список">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
     </list>
@@ -149,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773756535550</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="добавлен заголовок списка и кнопка добавления города в список">
+      <option name="closed" value="true" />
+      <created>1773757005382</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773757005382</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -165,6 +173,7 @@
     <MESSAGE value="добавлен PageView с экранами &quot;Главная страница&quot; и &quot;Отслеживаемые города&quot;" />
     <MESSAGE value="добавлены точки-индикаторы страниц для навигации по экрану" />
     <MESSAGE value="добавлен фон" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен фон" />
+    <MESSAGE value="добавлен заголовок списка и кнопка добавления города в список" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен заголовок списка и кнопка добавления города в список" />
   </component>
 </project>

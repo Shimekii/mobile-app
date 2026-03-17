@@ -24,23 +24,12 @@ class TrackedCitiesScreen extends StatelessWidget {
             children: [
               SizedBox(height: 70),
 
-              // заголовок списка + кнопка добавления города в список
+              // кнопка добавления дополнительного города в список
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   children: [
-                    Text(
-                      "Отслеживаемые города",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-
                     Spacer(),
-
-                    // кнопка
                     GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, "/addMainCity");
@@ -55,6 +44,41 @@ class TrackedCitiesScreen extends StatelessWidget {
                 ),
               ),
 
+              SizedBox(height: 20),
+
+              // плашка (для списка городов)
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.23),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Column(
+                    children: [
+                      // заголовок внутри плашки
+                      Text(
+                        "Отслеживаемые города",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+
+                      SizedBox(height: 12),
+
+                      // список городов отслеживаемых
+                      Expanded(
+                        child: Container(), // пока пусто
+                        // child: _buildCitiesList(),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           )
         ],
