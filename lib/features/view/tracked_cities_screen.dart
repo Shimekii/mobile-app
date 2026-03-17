@@ -49,7 +49,7 @@ class TrackedCitiesScreen extends StatelessWidget {
               // плашка (для списка городов)
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: EdgeInsets.fromLTRB(16, 0, 16, 80),
                   padding: EdgeInsets.symmetric(vertical: 16),
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 0, 0, 0.23),
