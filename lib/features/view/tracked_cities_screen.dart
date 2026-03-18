@@ -12,15 +12,6 @@ class TrackedCitiesScreen extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body: Stack(
         children: [
-          // фон
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/onboarding_background.jpeg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
 
           // содержимое
           Column(

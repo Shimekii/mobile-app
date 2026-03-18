@@ -31,14 +31,6 @@ class _MainHomeContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/onboarding_background.jpeg"),
-                  fit: BoxFit.cover,
-                )
-            ),
-          ),
           Positioned(
             top: 105,
             left: 0,
@@ -275,6 +267,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          // общий фон
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/onboarding_background.jpeg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+
+
           PageView(
             controller: _controller,
             onPageChanged: (index) {
@@ -288,7 +291,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
 
-          // Индикатор
+          // индикатор
           Positioned(
             bottom: 30,
             left: 0,
