@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлено: сохранение списка отслеживаемых городов в локальное хранилище и метод загрузки списка при запуске приложения">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/app_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/app_viewmodel.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,23 +67,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/city-add&quot;,
-    &quot;io.flutter.project.isFirstOpen&quot;: &quot;true&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.main.dart.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "feature/city-add",
+    "io.flutter.project.isFirstOpen": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="" />
@@ -237,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773804131714</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="добавлено: сохранение списка отслеживаемых городов в локальное хранилище и метод загрузки списка при запуске приложения">
+      <option name="closed" value="true" />
+      <created>1773805128408</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1773805128408</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -264,6 +273,7 @@
     <MESSAGE value="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного" />
     <MESSAGE value="добавлена обработка пустого списка, отслеживаемых городов, с информационным сообщением" />
     <MESSAGE value="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного" />
+    <MESSAGE value="добавлено: сохранение списка отслеживаемых городов в локальное хранилище и метод загрузки списка при запуске приложения" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлено: сохранение списка отслеживаемых городов в локальное хранилище и метод загрузки списка при запуске приложения" />
   </component>
 </project>
