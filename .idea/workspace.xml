@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/app_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/app_viewmodel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773774135996</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="добавлена обработка пустого списка, отслеживаемых городов, с информационным сообщением">
+      <option name="closed" value="true" />
+      <created>1773774384848</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1773774384848</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -246,6 +255,8 @@
     <MESSAGE value="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города" />
     <MESSAGE value="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся" />
     <MESSAGE value="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного" />
-    <option name="LAST_COMMIT_MESSAGE" value="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного" />
+    <MESSAGE value="добавлена обработка пустого списка, отслеживаемых городов, с информационным сообщением" />
+    <MESSAGE value="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного" />
   </component>
 </project>

@@ -1,6 +1,5 @@
 import 'package:air_check/app/app_viewmodel.dart';
 import 'package:air_check/models/city.dart';
-import 'package:air_check/repositories/air_quality_data.dart';
 import 'package:air_check/repositories/city_repository.dart';
 import 'package:air_check/services/city_service.dart';
 import 'package:flutter/material.dart';
@@ -70,31 +69,39 @@ class SelectCityView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final city = cityRepository.cities[index];
                       return GestureDetector(
-                        onTap: () async {
-                          final vm = Provider.of<AppViewModel>(context, listen: false);
-                          final coords = await cityService.getCoordByName(city);
-                            if (coords == null) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Город не найден')),
-                              );
-                              return;
-                            }
+                          onTap: () async {
+                            final vm = Provider.of<AppViewModel>(context, listen: false);
 
-                            final newCity = City(city, AirQualityData.empty(), coords);
                             if (isSelectingForTracking) {
-                              // добавление в список отслеживаемых городов
-                              vm.addTrackedCity(newCity);
+                              final success = await vm.addTrackedCityByName(city);
+
+                              if (!success) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(content: Text('Город уже добавлен или не найден')),
+                                );
+                                return;
+                              }
+
                               Navigator.pop(context);
-                            }
-                            else
-                            {
-                              // основной город
+                            } else {
+                              // логика выбора основного города
+                              final coords = await cityService.getCoordByName(city);
+
+                              if (coords == null) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(content: Text('Город не найден')),
+                                );
+                                return;
+                              }
+
+                              final aqd = await vm.airRepository.loadAirQualityByCoord(coords);
+                              final newCity = City(city, aqd, coords);
+
                               vm.setMainCity(newCity);
-                              vm.getCurrentAqi();
                               await vm.saveMainCity();
                               Navigator.pushReplacementNamed(context, "/home");
                             }
-                        },
+                          },
                         child: Container(
                           margin: EdgeInsets.symmetric(
                             horizontal: 10,

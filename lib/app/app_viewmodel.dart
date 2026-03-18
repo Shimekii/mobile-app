@@ -80,15 +80,24 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addTrackedCity(City city) {
-    final exists = trackedCities.any((c) => c.name == city.name);
+  Future<bool> addTrackedCityByName(String cityName) async {
+    final coords = await cityService.getCoordByName(cityName);
 
-    if (exists) {
-      return;
-    }
+    if (coords == null) return false;
 
-    trackedCities.add(city);
+    final exists = trackedCities.any((c) => c.name == cityName);
+    if (exists) return false;
+
+    final aqd = await airRepository.loadAirQualityByCoord(coords);
+
+    final newCity = City(cityName, aqd, coords);
+
+    trackedCities.add(newCity);
+
+    // await saveTrackedCities();
     notifyListeners();
+
+    return true;
   }
 
   Future<void> getCurrentAqi() async {
