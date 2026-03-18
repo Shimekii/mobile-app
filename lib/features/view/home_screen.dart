@@ -11,6 +11,22 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _MainHomeContent extends StatelessWidget {
+  Color getAqiColor(int aqi) {
+    if (aqi <= 50) return Colors.green;
+    if (aqi <= 100) return Colors.yellow;
+    if (aqi <= 150) return Colors.orange;
+    if (aqi <= 200) return Colors.red;
+    return Colors.purple;
+  }
+
+  String getAqiLabel(int aqi) {
+    if (aqi <= 50) return "ХОРОШО";
+    if (aqi <= 100) return "УМЕРЕННО";
+    if (aqi <= 150) return "ВРЕДНО";
+    if (aqi <= 200) return "НЕЗДОРОВО";
+    return "ОПАСНО";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -30,6 +46,7 @@ class _MainHomeContent extends StatelessWidget {
             child: Consumer<AppViewModel>(
                 builder: (context, vm, _){
                   final cityName = vm.mainCity?.name ?? "Null";
+                  final aqi = vm.mainCity?.aqd.aqi ?? 0;
                   return Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -97,10 +114,10 @@ class _MainHomeContent extends StatelessWidget {
                                   ),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(50),
-                                      color: Colors.green
+                                      color: getAqiColor(aqi)
                                   ),
                                   child: Text(
-                                    "ХОРОШО", // "Хорошо"
+                                    getAqiLabel(aqi),
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
