@@ -12,11 +12,11 @@ class HomeScreen extends StatefulWidget {
 
 class _MainHomeContent extends StatelessWidget {
   Color getAqiColor(int aqi) {
-    if (aqi <= 50) return Colors.green;
-    if (aqi <= 100) return Colors.yellow;
-    if (aqi <= 150) return Colors.orange;
-    if (aqi <= 200) return Colors.red;
-    return Colors.purple;
+    if (aqi <= 50) return Colors.green.withValues(alpha: 0.8);
+    if (aqi <= 100) return Colors.yellow.shade700.withValues(alpha: 0.8);
+    if (aqi <= 150) return Colors.orange.shade600.withValues(alpha: 0.8);
+    if (aqi <= 200) return Colors.red.withValues(alpha: 0.8);
+    return Colors.purple.withValues(alpha: 0.8);
   }
 
   String getAqiLabel(int aqi) {
@@ -116,9 +116,11 @@ class _MainHomeContent extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(50),
                                       color: getAqiColor(aqi)
                                   ),
-                                  child: Text(
+                                  child:
+                                  Text(
                                     getAqiLabel(aqi),
-                                    style: TextStyle(
+                                    style:
+                                    TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,
