@@ -5,6 +5,25 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  //Цвет в соответствии с уровнем AQI
+  Color getAqiColor(int aqi) {
+    if (aqi <= 50) return Colors.green;
+    if (aqi <= 100) return Colors.yellow;
+    if (aqi <= 150) return Colors.orange;
+    if (aqi <= 200) return Colors.red;
+    if (aqi <= 300) return Colors.purple;
+    return Colors.brown;
+  }
+
+  String getAqiText(int aqi) {
+    if (aqi <= 50) return "ХОРОШО";
+    if (aqi <= 100) return "УМЕРЕННО";
+    if (aqi <= 150) return "ВРЕДНО";
+    if (aqi <= 200) return "ПЛОХО";
+    if (aqi <= 300) return "ОЧ. ПЛОХО";
+    return "ОПАСНО";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              vm.mainCity!.aqd.aqi.toString(),
+                              vm.mainCity!.aqd.currentAqi.toString(),
                               style: TextStyle(
                                 fontSize: 100,
                                 fontWeight: FontWeight.bold,
@@ -92,10 +111,10 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
-                                  color: Colors.green
+                                  color: getAqiColor(vm.mainCity!.aqd.currentAqi)
                                 ),
                                 child: Text(
-                                  "ХОРОШО", // "Хорошо"
+                                  getAqiText(vm.mainCity!.aqd.currentAqi),
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w500,
@@ -131,109 +150,131 @@ class HomeScreen extends StatelessWidget {
             bottom: 80,
             left: 18,
             right: 18,
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                vertical: 20,
-                horizontal: 16,
-              ),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(59, 0, 0, 0),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsetsGeometry.only(left: 8, bottom: 12),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.calendar_today,
-                          color: Colors.white,
-                          size: 20,
-                        ),
-                        //SizedBox(width: width * 0.02),
-                        Text(
-                          "Прогноз на 5 дней",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          )
-                        )
-                      ]
-                    )
+            child: Consumer<AppViewModel>(
+              builder: (context, vm, _) {
+                final forecast = vm.mainCity?.aqd.forecast;
+                final isForecastLoaded = forecast != null && forecast.isNotEmpty;
+                String msg = "";
+                if (forecast == null) {
+                  msg = "Загрузка прогноза...";
+                }
+                else if (forecast.isEmpty) {
+                  msg = "Не удалось загрузить прогноз";
+                }
+                return Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 20,
+                    horizontal: 16,
                   ),
-
-                  //Отдельные строчки
-                  ...List.generate(5, (index) {
-                    final days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-                    final today = DateTime.now().weekday - 1;
-                    final dayIndex = (today + index) % 7;
-                    //Тестовые значения
-                    final mockAqi = [23, 34, 55, 80, 112][index];
-
-                    //Цвет в соответствии с уровнем AQI
-                    Color getAqiColor(int aqi) {
-                      if (aqi <= 50) return Colors.green;
-                      if (aqi <= 100) return Colors.yellow;
-                      if (aqi <= 150) return Colors.orange;
-                      if (aqi <= 200) return Colors.red;
-                      if (aqi <= 300) return Colors.purple;
-                      return Colors.brown;
-                    }
-
-                    return Container(
-                      margin: EdgeInsets.only(bottom: 12),
-                      padding: EdgeInsets.symmetric(
-                        vertical: 8,
-                        horizontal: 18,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withAlpha(50),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        children: [
-                          //День недели
-                          Text(
-                            days[dayIndex],
-                            style: TextStyle(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(59, 0, 0, 0),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsGeometry.only(left: 8, bottom: 12),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.calendar_today,
                               color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500
+                              size: 20,
                             ),
-                          ),
-
-                          const Spacer(),
-                          
-                          //Цветовой индикатор
-                          CircleAvatar(
-                            radius: 8,
-                            backgroundColor: getAqiColor(mockAqi),
-                          ),
-
-                          SizedBox(width: 8),
-
-                          //Уровень AQI
-                          SizedBox(
-                            width: 72,
-                            child: Text(
-                              "$mockAqi AQI",
+                            //SizedBox(width: width * 0.02),
+                            Text(
+                              "Прогноз на 5 дней",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.right,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              )
                             )
+                          ]
+                        )
+                      ),
+
+                      if (!isForecastLoaded)
+                      Container (
+                        padding: EdgeInsets.symmetric(vertical: 30),
+                        child: Center(
+                          child: Text(
+                            msg,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            textAlign: TextAlign.center,
                           )
-                        ]
+                        ),
                       )
-                    );
-                  })
-                ]
-              )
+                      
+                      else 
+                      //Отдельные строчки
+                      ...List.generate(forecast.length, (index) {
+                        final days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+                        final today = DateTime.now().weekday - 1;
+                        final dayIndex = (today + index) % 7;
+
+                        final aqiValues = forecast[index];
+
+
+
+                        return Container(
+                          margin: EdgeInsets.only(bottom: 12),
+                          padding: EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 18,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withAlpha(50),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            children: [
+                              //День недели
+                              Text(
+                                days[dayIndex],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500
+                                ),
+                              ),
+
+                              const Spacer(),
+                              
+                              //Цветовой индикатор
+                              CircleAvatar(
+                                radius: 8,
+                                backgroundColor: getAqiColor(aqiValues),
+                              ),
+
+                              SizedBox(width: 8),
+
+                              //Уровень AQI
+                              SizedBox(
+                                width: 72,
+                                child: Text(
+                                  "$aqiValues AQI",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.right,
+                                )
+                              )
+                            ]
+                          )
+                        );
+                      })
+                    ]
+                  )
+                );
+              }
             )
           )
         ]
