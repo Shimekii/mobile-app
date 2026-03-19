@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="в сервис города добавлен метод поиска городов для использования в поисковой строке">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="преобразования SelectCityView для поддержки динамического поиска по городам">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
     </list>
@@ -287,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773918167757</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="исправлено: отступы внешние и внутренние">
+      <option name="closed" value="true" />
+      <created>1773918501172</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1773918501172</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -320,6 +328,8 @@
     <MESSAGE value="исправлено: подобраны цвета для лучшего восприятия для статусов качества воздуха" />
     <MESSAGE value="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия" />
     <MESSAGE value="в сервис города добавлен метод поиска городов для использования в поисковой строке" />
-    <option name="LAST_COMMIT_MESSAGE" value="в сервис города добавлен метод поиска городов для использования в поисковой строке" />
+    <MESSAGE value="исправлено: отступы внешние и внутренние" />
+    <MESSAGE value="преобразования SelectCityView для поддержки динамического поиска по городам" />
+    <option name="LAST_COMMIT_MESSAGE" value="преобразования SelectCityView для поддержки динамического поиска по городам" />
   </component>
 </project>
