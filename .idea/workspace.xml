@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="исправлены отступы">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773919763881</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат">
+      <option name="closed" value="true" />
+      <created>1773920068409</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1773920068409</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -345,7 +354,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="добавлены точки-индикаторы страниц для навигации по экрану" />
     <MESSAGE value="добавлен фон" />
     <MESSAGE value="добавлен заголовок списка и кнопка добавления города в список" />
     <MESSAGE value="добавлена плашка для списка отслеживаемых городов и заголовок списка перенесён в плашку" />
@@ -370,6 +378,7 @@
     <MESSAGE value="добавлена задержка для поиска по городам, для уменьшения количества запросов" />
     <MESSAGE value="остановка таймера, очистка ресурсов" />
     <MESSAGE value="исправлены отступы" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлены отступы" />
+    <MESSAGE value="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат" />
   </component>
 </project>

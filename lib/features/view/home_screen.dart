@@ -191,12 +191,11 @@ class _MainHomeContent extends StatelessWidget {
 
                           //Цвет в соответствии с уровнем AQI
                           Color getAqiColor(int aqi) {
-                            if (aqi <= 50) return Colors.green;
-                            if (aqi <= 100) return Colors.yellow;
-                            if (aqi <= 150) return Colors.orange;
-                            if (aqi <= 200) return Colors.red;
-                            if (aqi <= 300) return Colors.purple;
-                            return Colors.brown;
+                            if (aqi <= 50) return Colors.green.withValues(alpha: 0.8);
+                            if (aqi <= 100) return Colors.yellow.shade700.withValues(alpha: 0.8);
+                            if (aqi <= 150) return Colors.orange.shade600.withValues(alpha: 0.8);
+                            if (aqi <= 200) return Colors.red.withValues(alpha: 0.8);
+                            return Colors.purple.withValues(alpha: 0.8);
                           }
 
                           return Container(
