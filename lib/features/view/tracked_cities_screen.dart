@@ -135,7 +135,7 @@ class TrackedCitiesScreen extends StatelessWidget {
               // кружок-индикатор
               CircleAvatar(
                 radius: 8,
-                backgroundColor: getAqiColor(city.aqd.aqi),
+                backgroundColor: getAqiColor(city.aqd.currentAqi),
               ),
 
               SizedBox(width: 8),
@@ -144,7 +144,7 @@ class TrackedCitiesScreen extends StatelessWidget {
               SizedBox(
                 width: 60,
                 child: Text(
-                  "${city.aqd.aqi} AQI",
+                  "${city.aqd.currentAqi} AQI",
                   textAlign: TextAlign.right,
                   style: TextStyle(
                     color: Colors.white,
