@@ -1,5 +1,5 @@
-import 'package:air_check/models/coordinates.dart';
-import 'package:air_check/repositories/air_quality_data.dart';
+import 'package:air_check/core/models/coordinates.dart';
+import 'package:air_check/core/repositories/air_quality_data.dart';
 
 class City {
   final Coordinates coordinates;

@@ -1,10 +1,10 @@
-import 'package:air_check/models/city.dart';
-import 'package:air_check/models/coordinates.dart';
-import 'package:air_check/repositories/air_quality_data.dart';
-import 'package:air_check/repositories/air_repository.dart';
-import 'package:air_check/services/city_service.dart';
-import 'package:air_check/services/connectivity_service.dart';
-import 'package:air_check/services/location_service.dart';
+import 'package:air_check/core/models/city.dart';
+import 'package:air_check/core/models/coordinates.dart';
+import 'package:air_check/core/repositories/air_quality_data.dart';
+import 'package:air_check/core/repositories/air_repository.dart';
+import 'package:air_check/core/services/city_service.dart';
+import 'package:air_check/core/services/connectivity_service.dart';
+import 'package:air_check/core/services/location_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -17,14 +17,10 @@ class AppViewModel extends ChangeNotifier {
 
   bool _isLoading = true;
   bool _isFirstLaunch = true; // проверка, был ли первый запуск
-  bool _isForecastLoading = false;
-  bool _forecastError = false;
   bool hasInternet = false;
   bool mainCitySelected = false;
   bool get isLoading => _isLoading;
   bool get isFirstLaunch => _isFirstLaunch;
-  bool get isForecastLoading => _isForecastLoading;
-  bool get forecastError => _forecastError;
 
   City? mainCity;
 
