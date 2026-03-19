@@ -99,6 +99,16 @@ class _SelectCityViewState extends State<SelectCityView> {
 
                   child: isLoading
                       ? Center(child: CircularProgressIndicator())
+                      : cities.isEmpty
+                      ? Center(
+                    child: Text(
+                      "Начните вводить название города",
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 16,
+                      ),
+                    ),
+                  )
                       : ListView.builder(
                     itemCount: cities.length,
                     itemBuilder: (context, index) {

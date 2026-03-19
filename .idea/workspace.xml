@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="остановка таймера, очистка ресурсов">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="исправлены отступы">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
     </list>
@@ -327,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773919642292</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="исправлены отступы">
+      <option name="closed" value="true" />
+      <created>1773919763880</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919763881</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -337,7 +345,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="добавлен PageView с экранами &quot;Главная страница&quot; и &quot;Отслеживаемые города&quot;" />
     <MESSAGE value="добавлены точки-индикаторы страниц для навигации по экрану" />
     <MESSAGE value="добавлен фон" />
     <MESSAGE value="добавлен заголовок списка и кнопка добавления города в список" />
@@ -362,6 +369,7 @@
     <MESSAGE value="обработка загрузки результатов поиска по городам" />
     <MESSAGE value="добавлена задержка для поиска по городам, для уменьшения количества запросов" />
     <MESSAGE value="остановка таймера, очистка ресурсов" />
-    <option name="LAST_COMMIT_MESSAGE" value="остановка таймера, очистка ресурсов" />
+    <MESSAGE value="исправлены отступы" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлены отступы" />
   </component>
 </project>
