@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:air_check/services/city_service.dart';
+import 'package:air_check/core/services/city_service.dart';
 
 class SelectCityViewModel extends ChangeNotifier {
   final CityService cityService = CityService();

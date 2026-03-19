@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:air_check/models/coordinates.dart';
+import 'package:air_check/core/models/coordinates.dart';
 
 class CityService {
   final String username = "shimeki";

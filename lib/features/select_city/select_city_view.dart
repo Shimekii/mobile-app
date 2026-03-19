@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:air_check/app/app_viewmodel.dart';
-import 'package:air_check/models/city.dart';
-import 'package:air_check/services/city_service.dart';
+import 'package:air_check/core/models/city.dart';
+import 'package:air_check/core/services/city_service.dart';
 import 'select_city_viewmodel.dart';
 
 class SelectCityView extends StatelessWidget {

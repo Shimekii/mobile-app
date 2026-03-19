@@ -1,4 +1,4 @@
-import 'package:air_check/features/view/select_city_view.dart';
+import 'package:air_check/features/select_city/select_city_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:air_check/app/app_viewmodel.dart';
