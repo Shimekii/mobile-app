@@ -13,7 +13,6 @@ class SelectCityView extends StatelessWidget {
     this.isSelectingForTracking = false,
   });
 
-  @id86240433 (@override)
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => SelectCityViewModel(),
