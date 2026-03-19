@@ -17,10 +17,14 @@ class AppViewModel extends ChangeNotifier {
 
   bool _isLoading = true;
   bool _isFirstLaunch = true; // проверка, был ли первый запуск
+  bool _isForecastLoading = false;
+  bool _forecastError = false;
   bool hasInternet = false;
   bool mainCitySelected = false;
   bool get isLoading => _isLoading;
   bool get isFirstLaunch => _isFirstLaunch;
+  bool get isForecastLoading => _isForecastLoading;
+  bool get forecastError => _forecastError;
 
   City? mainCity;
 

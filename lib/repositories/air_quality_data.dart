@@ -1,11 +1,13 @@
 class AirQualityData {
-  final int aqi;
+  final int currentAqi;
+  final List<int>? forecast;
 
   AirQualityData({
-    required this.aqi,
+    required this.currentAqi,
+    this.forecast,
   });
 
   factory AirQualityData.empty() {
-    return AirQualityData(aqi: 0);
+    return AirQualityData(currentAqi: 0);
   }
 }

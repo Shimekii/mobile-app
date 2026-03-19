@@ -25,6 +25,7 @@ class CityService {
           final first = data['geonames'][0];
           final double lat = double.parse(first['lat'].toString());
           final double lon = double.parse(first['lng'].toString());
+          print('lat=$lat, lon=$lon');
           return Coordinates(lat, lon);
         } else {
           // город не найден
