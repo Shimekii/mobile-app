@@ -1,10 +1,10 @@
-import 'package:air_check/models/city.dart';
-import 'package:air_check/models/coordinates.dart';
-import 'package:air_check/repositories/air_quality_data.dart';
-import 'package:air_check/repositories/air_repository.dart';
-import 'package:air_check/services/city_service.dart';
-import 'package:air_check/services/connectivity_service.dart';
-import 'package:air_check/services/location_service.dart';
+import 'package:air_check/core/models/city.dart';
+import 'package:air_check/core/models/coordinates.dart';
+import 'package:air_check/core/repositories/air_quality_data.dart';
+import 'package:air_check/core/repositories/air_repository.dart';
+import 'package:air_check/core/services/city_service.dart';
+import 'package:air_check/core/services/connectivity_service.dart';
+import 'package:air_check/core/services/location_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';

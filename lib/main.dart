@@ -1,11 +1,11 @@
-import 'package:air_check/features/view/select_city_viewmodel.dart';
-import 'package:air_check/features/view/home_screen.dart';
-import 'package:air_check/features/view/no_internet_screen.dart';
+import 'package:air_check/features/select_city/select_city_view.dart';
+import 'package:air_check/features/welcome/home_screen.dart';
+import 'package:air_check/features/error/no_internet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app/app_root.dart';
 import 'app/app_viewmodel.dart';
-import 'features/view/welcome_screen.dart';
+import 'features/welcome/welcome_screen.dart';
 
 void main() {
   runApp(
