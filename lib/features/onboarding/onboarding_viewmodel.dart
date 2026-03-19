@@ -27,4 +27,17 @@ class OnboardingViewModel extends ChangeNotifier {
       "description": "Получайте уведомления при повышенном уровне загрязнения, чтобы заранее принять меры."
     },
   ];
+  void setPage(int index) {
+    currentPage = index;
+    notifyListeners();
+  }
+
+  bool get isLastPage => currentPage == pages.length - 1;
+
+  void nextPage() {
+    controller.nextPage(
+      duration: Duration(milliseconds: 300),
+      curve: Curves.ease,
+    );
+  }
 }
