@@ -77,7 +77,7 @@ class SelectCityView extends StatelessWidget {
 
                             final newCity = City(city, AirQualityData.empty(), coords);
                             vm.setMainCity(newCity);
-                            vm.getCurrentAqi();
+                            vm.getAqi();
                             await vm.saveMainCity();
                             Navigator.pushReplacementNamed(context, "/home");
                         },
