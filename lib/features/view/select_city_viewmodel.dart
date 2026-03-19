@@ -43,6 +43,12 @@ class _SelectCityViewState extends State<SelectCityView> {
   }
 
   @override
+  void dispose() {
+    _debounce?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final vm = Provider.of<AppViewModel>(context, listen: false);
 
