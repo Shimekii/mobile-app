@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="исправлено: подобраны цвета для лучшего восприятия для статусов качества воздуха">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/city_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/city_service.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773857311977</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия">
+      <option name="closed" value="true" />
+      <created>1773857684791</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1773857684791</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -303,6 +310,7 @@
     <MESSAGE value="проверка коммитов (акк: Pavel с почтой your@email.com это равно акк: paveldarensky с почтой pashok.darenskii@gmail.com)" />
     <MESSAGE value="исправлено: корректное отображение статуса и индикатора для основного города" />
     <MESSAGE value="исправлено: подобраны цвета для лучшего восприятия для статусов качества воздуха" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлено: подобраны цвета для лучшего восприятия для статусов качества воздуха" />
+    <MESSAGE value="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия" />
   </component>
 </project>
