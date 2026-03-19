@@ -53,7 +53,7 @@ class _SelectCityViewBody extends StatelessWidget {
             children: [
               SizedBox(height: 70),
 
-              // 🔍 поиск
+              // поиск
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
