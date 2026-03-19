@@ -17,12 +17,18 @@ class AppViewModel extends ChangeNotifier {
 
   bool _isLoading = true;
   bool _isFirstLaunch = true; // проверка, был ли первый запуск
+  bool _isForecastLoading = false;
+  bool _forecastError = false;
   bool hasInternet = false;
   bool mainCitySelected = false;
   bool get isLoading => _isLoading;
   bool get isFirstLaunch => _isFirstLaunch;
+  bool get isForecastLoading => _isForecastLoading;
+  bool get forecastError => _forecastError;
 
   City? mainCity;
+
+  List<City> trackedCities = []; // список отслеживаемых городов
 
   Future<void> initializeApp() async {
     // Имитируем загрузку
@@ -41,7 +47,8 @@ class AppViewModel extends ChangeNotifier {
       mainCity = City(name, aqd, coords);
       mainCitySelected = true;
     }
-  
+
+    await loadTrackedCities(); // подгружаем отслеживаемые города, добавленные
 
     _isLoading = false;
     notifyListeners();
@@ -76,6 +83,62 @@ class AppViewModel extends ChangeNotifier {
   void setMainCity(City city){
     mainCity = city;
     notifyListeners();
+  }
+
+  // булева функция добавления города в список для отслеживания с запросом его реального показателя качества воздуха
+  Future<bool> addTrackedCityByName(String cityName) async {
+    final coords = await cityService.getCoordByName(cityName);
+
+    if (coords == null) return false;
+
+    final exists = trackedCities.any((c) => c.name == cityName);
+    if (exists) return false;
+
+    final aqd = await airRepository.loadAirQualityByCoord(coords);
+
+    final newCity = City(cityName, aqd, coords);
+
+    trackedCities.add(newCity);
+
+    await saveTrackedCities();
+    notifyListeners();
+
+    return true;
+  }
+
+  // сохранение локально данных об отслеживаемых городах
+  Future<void> saveTrackedCities() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    final names = trackedCities.map((c) => c.name).toList();
+    final lats = trackedCities.map((c) => c.coordinates.lat.toString()).toList();
+    final lons = trackedCities.map((c) => c.coordinates.lon.toString()).toList();
+
+    await prefs.setStringList("tracked_names", names);
+    await prefs.setStringList("tracked_lats", lats);
+    await prefs.setStringList("tracked_lons", lons);
+  }
+
+  // загрузка из локального хранилища отслеживаемых городов
+  Future<void> loadTrackedCities() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    final names = prefs.getStringList("tracked_names") ?? [];
+    final lats = prefs.getStringList("tracked_lats") ?? [];
+    final lons = prefs.getStringList("tracked_lons") ?? [];
+
+    trackedCities.clear();
+
+    for (int i = 0; i < names.length; i++) {
+      final name = names[i];
+      final lat = double.parse(lats[i]);
+      final lon = double.parse(lons[i]);
+
+      final coords = Coordinates(lat, lon);
+      final aqd = await airRepository.loadAirQualityByCoord(coords);
+
+      trackedCities.add(City(name, aqd, coords));
+    }
   }
 
   Future<void> getCurrentAqi() async {

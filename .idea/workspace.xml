@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/view/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/home_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/tracked_cities_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +38,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "paveldarensky"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;paveldarensky&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Shimekii/mobile-app.git",
-    "accountId": "abdba328-a208-451b-94e9-2adf809df015"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Shimekii/mobile-app.git&quot;,
+    &quot;accountId&quot;: &quot;abdba328-a208-451b-94e9-2adf809df015&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -65,23 +69,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feature/main-city-additional-changeMainCity",
-    "io.flutter.project.isFirstOpen": "true",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/city-add&quot;,
+    &quot;io.flutter.project.isFirstOpen&quot;: &quot;true&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="" />
@@ -98,7 +104,247 @@
       <option name="project" value="LOCAL" />
       <updated>1773139190978</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;">
+      <option name="closed" value="true" />
+      <created>1773726325032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773726325032</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;">
+      <option name="closed" value="true" />
+      <created>1773726433925</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773726433925</updated>
+    </task>
+    <task id="LOCAL-00004" summary="добавлен пустой экран отслеживаемых городов">
+      <option name="closed" value="true" />
+      <created>1773753485364</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773753485364</updated>
+    </task>
+    <task id="LOCAL-00005" summary="добавлен PageView с экранами &quot;Главная страница&quot; и &quot;Отслеживаемые города&quot;">
+      <option name="closed" value="true" />
+      <created>1773754035951</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773754035951</updated>
+    </task>
+    <task id="LOCAL-00006" summary="добавлены точки-индикаторы страниц для навигации по экрану">
+      <option name="closed" value="true" />
+      <created>1773754640463</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773754640463</updated>
+    </task>
+    <task id="LOCAL-00007" summary="добавлен фон">
+      <option name="closed" value="true" />
+      <created>1773756535550</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773756535550</updated>
+    </task>
+    <task id="LOCAL-00008" summary="добавлен заголовок списка и кнопка добавления города в список">
+      <option name="closed" value="true" />
+      <created>1773757005382</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773757005382</updated>
+    </task>
+    <task id="LOCAL-00009" summary="добавлена плашка для списка отслеживаемых городов и заголовок списка перенесён в плашку">
+      <option name="closed" value="true" />
+      <created>1773761888297</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773761888297</updated>
+    </task>
+    <task id="LOCAL-00010" summary="плашка исправлена - отступ снизу, margin">
+      <option name="closed" value="true" />
+      <created>1773762012008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773762012008</updated>
+    </task>
+    <task id="LOCAL-00011" summary="добавлен виджет для списка городов на плашке, временный мок и сопоставление цветов соответствующему показателю AQI">
+      <option name="closed" value="true" />
+      <created>1773762517806</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773762517806</updated>
+    </task>
+    <task id="LOCAL-00012" summary="исправлено отображение содержимого списка отслеживаемых городов">
+      <option name="closed" value="true" />
+      <created>1773762598785</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773762598785</updated>
+    </task>
+    <task id="LOCAL-00013" summary="исправлено/добавлено margin/padding для некоторых элементов">
+      <option name="closed" value="true" />
+      <created>1773764761632</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773764761632</updated>
+    </task>
+    <task id="LOCAL-00014" summary="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города">
+      <option name="closed" value="true" />
+      <created>1773772632953</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1773772632954</updated>
+    </task>
+    <task id="LOCAL-00015" summary="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся">
+      <option name="closed" value="true" />
+      <created>1773772941158</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1773772941158</updated>
+    </task>
+    <task id="LOCAL-00016" summary="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного">
+      <option name="closed" value="true" />
+      <created>1773774135996</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1773774135996</updated>
+    </task>
+    <task id="LOCAL-00017" summary="добавлена обработка пустого списка, отслеживаемых городов, с информационным сообщением">
+      <option name="closed" value="true" />
+      <created>1773774384848</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1773774384848</updated>
+    </task>
+    <task id="LOCAL-00018" summary="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного">
+      <option name="closed" value="true" />
+      <created>1773804131714</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1773804131714</updated>
+    </task>
+    <task id="LOCAL-00019" summary="добавлено: сохранение списка отслеживаемых городов в локальное хранилище и метод загрузки списка при запуске приложения">
+      <option name="closed" value="true" />
+      <created>1773805128408</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1773805128408</updated>
+    </task>
+    <task id="LOCAL-00020" summary="проверка коммитов (акк: Pavel с почтой your@email.com это равно акк: paveldarensky с почтой pashok.darenskii@gmail.com)">
+      <option name="closed" value="true" />
+      <created>1773808367029</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1773808367029</updated>
+    </task>
+    <task id="LOCAL-00021" summary="исправлено: корректное отображение статуса и индикатора для основного города">
+      <option name="closed" value="true" />
+      <created>1773810975637</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1773810975637</updated>
+    </task>
+    <task id="LOCAL-00022" summary="исправлено: подобраны цвета для лучшего восприятия для статусов качества воздуха">
+      <option name="closed" value="true" />
+      <created>1773857311977</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1773857311977</updated>
+    </task>
+    <task id="LOCAL-00023" summary="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия">
+      <option name="closed" value="true" />
+      <created>1773857684791</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1773857684791</updated>
+    </task>
+    <task id="LOCAL-00024" summary="в сервис города добавлен метод поиска городов для использования в поисковой строке">
+      <option name="closed" value="true" />
+      <created>1773918167757</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1773918167757</updated>
+    </task>
+    <task id="LOCAL-00025" summary="исправлено: отступы внешние и внутренние">
+      <option name="closed" value="true" />
+      <created>1773918501172</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1773918501172</updated>
+    </task>
+    <task id="LOCAL-00026" summary="преобразования SelectCityView для поддержки динамического поиска по городам">
+      <option name="closed" value="true" />
+      <created>1773919064099</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919064099</updated>
+    </task>
+    <task id="LOCAL-00027" summary="обработка загрузки результатов поиска по городам">
+      <option name="closed" value="true" />
+      <created>1773919335750</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919335750</updated>
+    </task>
+    <task id="LOCAL-00028" summary="добавлена задержка для поиска по городам, для уменьшения количества запросов">
+      <option name="closed" value="true" />
+      <created>1773919582733</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919582733</updated>
+    </task>
+    <task id="LOCAL-00029" summary="остановка таймера, очистка ресурсов">
+      <option name="closed" value="true" />
+      <created>1773919642292</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919642292</updated>
+    </task>
+    <task id="LOCAL-00030" summary="исправлены отступы">
+      <option name="closed" value="true" />
+      <created>1773919763880</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919763881</updated>
+    </task>
+    <task id="LOCAL-00031" summary="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат">
+      <option name="closed" value="true" />
+      <created>1773920068409</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1773920068409</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -108,7 +354,31 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города" />
+    <MESSAGE value="добавлен фон" />
+    <MESSAGE value="добавлен заголовок списка и кнопка добавления города в список" />
+    <MESSAGE value="добавлена плашка для списка отслеживаемых городов и заголовок списка перенесён в плашку" />
+    <MESSAGE value="плашка исправлена - отступ снизу, margin" />
+    <MESSAGE value="добавлен виджет для списка городов на плашке, временный мок и сопоставление цветов соответствующему показателю AQI" />
+    <MESSAGE value="исправлено отображение содержимого списка отслеживаемых городов" />
+    <MESSAGE value="исправлено/добавлено margin/padding для некоторых элементов" />
+    <MESSAGE value="добавлен флаг для переключения поведения 'экрана с выбором города': выбора основного города или добавление дополнительного города" />
+    <MESSAGE value="добавлен список отслеживаемых городов и определение метода добавления дополнительного города к списку отслеживающихся" />
+    <MESSAGE value="мок для отслеживаемых городов удален, добавлена реальная возможность добавлять город в список + откорректировано поведение экрана с выбором города для случая основного города и дополнительного" />
+    <MESSAGE value="добавлена обработка пустого списка, отслеживаемых городов, с информационным сообщением" />
+    <MESSAGE value="добавлено: логика отслеживания городов в viewmodel; булева функция addTrackedCityByName; обработка ошибки при попытке дублирования города или несущ. города;&#10;исправлено: логика поведения в экране выбора города для выбора основного и добавления дополнительного" />
+    <MESSAGE value="добавлено: сохранение списка отслеживаемых городов в локальное хранилище и метод загрузки списка при запуске приложения" />
+    <MESSAGE value="проверка коммитов (акк: Pavel с почтой your@email.com это равно акк: paveldarensky с почтой pashok.darenskii@gmail.com)" />
+    <MESSAGE value="исправлено: корректное отображение статуса и индикатора для основного города" />
+    <MESSAGE value="исправлено: подобраны цвета для лучшего восприятия для статусов качества воздуха" />
+    <MESSAGE value="исправлено: у страниц главный экран и отслеживаемые города - один фон, чтобы не было линии пересечения, а стало визуально плавнее и приятнее для восприятия" />
+    <MESSAGE value="в сервис города добавлен метод поиска городов для использования в поисковой строке" />
+    <MESSAGE value="исправлено: отступы внешние и внутренние" />
+    <MESSAGE value="преобразования SelectCityView для поддержки динамического поиска по городам" />
+    <MESSAGE value="обработка загрузки результатов поиска по городам" />
+    <MESSAGE value="добавлена задержка для поиска по городам, для уменьшения количества запросов" />
+    <MESSAGE value="остановка таймера, очистка ресурсов" />
+    <MESSAGE value="исправлены отступы" />
+    <MESSAGE value="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлено: подсказка по центру, если ввод названия города прекратился или не был начат" />
   </component>
 </project>
