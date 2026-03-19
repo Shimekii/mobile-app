@@ -3,6 +3,7 @@ import 'package:air_check/models/city.dart';
 import 'package:air_check/services/city_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:async';
 
 class SelectCityView extends StatefulWidget {
   final bool isSelectingForTracking; // флаг дял переключения выбора городов между 'основным' и 'добавлением дополнительного для отслеживания'
@@ -21,6 +22,25 @@ class _SelectCityViewState extends State<SelectCityView> {
 
   List<String> cities = [];
   bool isLoading = false;
+
+  Timer? _debounce;
+
+  void search(String query) {
+    if (_debounce?.isActive ?? false) _debounce!.cancel();
+
+    _debounce = Timer(const Duration(milliseconds: 500), () async {
+      if (query.isEmpty) return;
+
+      setState(() => isLoading = true);
+
+      final result = await cityService.searchCities(query);
+
+      setState(() {
+        cities = result;
+        isLoading = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +66,7 @@ class _SelectCityViewState extends State<SelectCityView> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 16),
                 child: TextField(
-                  // onChanged: search,
+                  onChanged: search,
                   decoration: InputDecoration(
                     hintText: "Введите название города",
                     border: OutlineInputBorder(

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="преобразования SelectCityView для поддержки динамического поиска по городам">
+    <list default="true" id="ec9e0aea-efaa-4a0e-ac9c-dddae7fa5362" name="Changes" comment="добавлена задержка для поиска по городам, для уменьшения количества запросов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/view/select_city_viewmodel.dart" afterDir="false" />
     </list>
@@ -303,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773919064099</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="обработка загрузки результатов поиска по городам">
+      <option name="closed" value="true" />
+      <created>1773919335750</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1773919335750</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -313,8 +321,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлена ветка feature/main-city-additional-changeMainCity, в которой будут внесены изменения в ключевую фичу &quot;Выбор основного города&quot;, касаемо смены основного города" />
-    <MESSAGE value="Добавлена ветка feature/city-add, в которой будет реализована фича - &quot;Создание списка городов, добавление города в список отслеживания качества воздуха&quot;" />
     <MESSAGE value="добавлен пустой экран отслеживаемых городов" />
     <MESSAGE value="добавлен PageView с экранами &quot;Главная страница&quot; и &quot;Отслеживаемые города&quot;" />
     <MESSAGE value="добавлены точки-индикаторы страниц для навигации по экрану" />
@@ -338,6 +344,8 @@
     <MESSAGE value="в сервис города добавлен метод поиска городов для использования в поисковой строке" />
     <MESSAGE value="исправлено: отступы внешние и внутренние" />
     <MESSAGE value="преобразования SelectCityView для поддержки динамического поиска по городам" />
-    <option name="LAST_COMMIT_MESSAGE" value="преобразования SelectCityView для поддержки динамического поиска по городам" />
+    <MESSAGE value="обработка загрузки результатов поиска по городам" />
+    <MESSAGE value="добавлена задержка для поиска по городам, для уменьшения количества запросов" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена задержка для поиска по городам, для уменьшения количества запросов" />
   </component>
 </project>
