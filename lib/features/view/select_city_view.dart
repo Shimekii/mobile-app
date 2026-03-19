@@ -12,7 +12,8 @@ class SelectCityView extends StatelessWidget {
     super.key,
     this.isSelectingForTracking = false,
   });
-
+  
+  @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => SelectCityViewModel(),
@@ -30,6 +31,7 @@ class _SelectCityViewBody extends StatelessWidget {
     required this.isSelectingForTracking,
   });
 
+  @override
   Widget build(BuildContext context) {
     final vm = Provider.of<SelectCityViewModel>(context);
     final appVm = Provider.of<AppViewModel>(context, listen: false);

@@ -31,6 +31,7 @@ class SelectCityViewModel extends ChangeNotifier {
     });
   }
 
+  @override
   void dispose() {
     _debounce?.cancel();
     super.dispose();
