@@ -30,7 +30,6 @@ class _SelectCityViewBody extends StatelessWidget {
     required this.isSelectingForTracking,
   });
 
-  @id86240433 (@override)
   Widget build(BuildContext context) {
     final vm = Provider.of<SelectCityViewModel>(context);
     final appVm = Provider.of<AppViewModel>(context, listen: false);
