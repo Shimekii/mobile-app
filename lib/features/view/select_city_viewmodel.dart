@@ -57,7 +57,7 @@ class SelectCityView extends StatelessWidget {
               Expanded(
                 child: Container(
                   //height: height * 0.9,
-                  margin: EdgeInsets.symmetric(horizontal: 16),
+                  margin: EdgeInsets.fromLTRB(16, 0, 16, 80),
                   padding: EdgeInsets.symmetric(vertical: 8),
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 0, 0, 0.23),
@@ -103,14 +103,8 @@ class SelectCityView extends StatelessWidget {
                             }
                           },
                         child: Container(
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 3.5,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                            vertical: 15,
-                            horizontal: 16,
-                          ),
+                          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(255, 255, 255, 0.2),
                             borderRadius: BorderRadius.circular(10),
