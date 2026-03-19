@@ -9,11 +9,9 @@ class AirRepository {
 
   Future<AirQualityData> loadAirQualityByCoord(Coordinates coord) async {
     int? aqi = await airService.fetchCurrent(coord.lat, coord.lon);
-    List<int>? forecast = await airService.fetchForecast(coord.lat, coord.lon);
 
     return AirQualityData(
-      currentAqi: aqi ?? 0,
-      forecast: forecast,
+      aqi: aqi ?? 0,
     );
   }
 
@@ -25,11 +23,10 @@ class AirRepository {
     }
 
     int? aqi = await airService.fetchCurrent(city.lat, city.lon);
-    List<int>? forecast = await airService.fetchForecast(city.lat, city.lon);
 
     return (
       city,
-      AirQualityData(currentAqi: aqi ?? 0, forecast: forecast),
+      AirQualityData(aqi: aqi ?? 0),
     );
   }
 }

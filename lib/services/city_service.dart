@@ -13,7 +13,6 @@ class CityService {
           'q': city,
           'maxRows': '1',
           'username': username,
-          'lang' : 'ru',
         },
       );
       final response = await http.get(uri);
@@ -25,7 +24,6 @@ class CityService {
           final first = data['geonames'][0];
           final double lat = double.parse(first['lat'].toString());
           final double lon = double.parse(first['lng'].toString());
-          print('lat=$lat, lon=$lon');
           return Coordinates(lat, lon);
         } else {
           // город не найден
@@ -54,7 +52,6 @@ class CityService {
         'lat': lat.toString(),
         'lng': lon.toString(),
         'username': username,
-        'lang' : 'ru',
       }
     );
 
@@ -66,36 +63,5 @@ class CityService {
       return data['geonames'][0]['name'];
     }
     return null;
-  }
-
-  Future<List<String>> searchCities(String query) async {
-    try {
-      final uri = Uri.http(
-        'api.geonames.org',
-        '/searchJSON',
-        {
-          'q': query,
-          'maxRows': '10',
-          'username': username,
-          'lang' : 'ru',
-        },
-      );
-
-      final response = await http.get(uri);
-
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-
-        if (data['geonames'] != null) {
-          return List<String>.from(
-            data['geonames'].map((c) => c['name']),
-          );
-        }
-      }
-    } catch (e) {
-      print("Ошибка поиска городов");
-    }
-
-    return [];
   }
 }
