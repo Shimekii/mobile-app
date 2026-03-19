@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter MVVM Demo',
+      title: 'AirCheck',
       routes: {
         "/welcome": (context) => WelcomeScreen(),
         "/home": (context) => HomeScreen(),
