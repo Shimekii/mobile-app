@@ -20,7 +20,15 @@ class CityRepository {
   ];
   final cityService = CityService();
 
-    Future<Coordinates?> fetchCoordinates(String cityName) {
+  Future<Coordinates?> fetchCoordinates(String cityName) {
     return cityService.getCoordByName(cityName);
+  }
+
+  Future<String?> fetchCityNameByCoordinates(double lat, double lon) {
+    return cityService.getCityNameByCoord(lat, lon);
+  }
+
+  Future<List<String>> searchCities(String query) {
+    return cityService.searchCities(query);
   }
 }

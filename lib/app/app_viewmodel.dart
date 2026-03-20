@@ -2,18 +2,18 @@ import 'package:air_check/core/models/city.dart';
 import 'package:air_check/core/models/coordinates.dart';
 import 'package:air_check/core/repositories/air_quality_data.dart';
 import 'package:air_check/core/repositories/air_repository.dart';
-import 'package:air_check/core/services/city_service.dart';
+import 'package:air_check/core/repositories/city_repository.dart';
+import 'package:air_check/core/repositories/location_repository.dart';
 import 'package:air_check/core/services/connectivity_service.dart';
-import 'package:air_check/core/services/location_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class AppViewModel extends ChangeNotifier {
-  final LocationService locationService = LocationService();
+  final LocationRepository locationRepository = LocationRepository();
   final ConnectivityService connectivityService = ConnectivityService();
   final AirRepository airRepository = AirRepository();
-  final CityService cityService = CityService();
+  final CityRepository cityRepository = CityRepository();
 
   bool _isLoading = true;
   bool _isFirstLaunch = true; // проверка, был ли первый запуск
@@ -51,11 +51,11 @@ class AppViewModel extends ChangeNotifier {
   }
 
   Future<bool> requestLocation() async {
-    bool granted = await locationService.requestPermission();
+    bool granted = await locationRepository.requestLocationPermission();
 
     if (granted){
-      Position pos = await locationService.getCoordinates();
-      String? name = await cityService.getCityNameByCoord(pos.latitude, pos.longitude);
+      Position pos = await locationRepository.getCurrentPosition();
+      String? name = await cityRepository.fetchCityNameByCoordinates(pos.latitude, pos.longitude);
       Coordinates coords = Coordinates(pos.latitude, pos.longitude);
       AirQualityData aqd = await airRepository.loadAirQualityByCoord(coords);
       mainCity = City(name!, aqd, coords);
@@ -83,7 +83,7 @@ class AppViewModel extends ChangeNotifier {
 
   // булева функция добавления города в список для отслеживания с запросом его реального показателя качества воздуха
   Future<bool> addTrackedCityByName(String cityName) async {
-    final coords = await cityService.getCoordByName(cityName);
+    final coords = await cityRepository.fetchCoordinates(cityName);
 
     if (coords == null) return false;
 
