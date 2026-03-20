@@ -13,6 +13,11 @@ class AqiDetailsScreen extends StatelessWidget {
     return Colors.purple;
   }
 
+  String formatValue(double? value) {
+    if (value == null) return "--";
+    return value.toStringAsFixed(1);
+  }
+  
   String getAqiLabel(int aqi) {
     if (aqi <= 50) return "Хорошо";
     if (aqi <= 100) return "Умеренно";
@@ -110,16 +115,16 @@ class AqiDetailsScreen extends StatelessWidget {
 
                   SizedBox(height: 16),
 
-                  // показатели (мок)
+                  // показатели
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _pollutant("20.1", "PM2.5"),
-                      _pollutant("11.1", "PM10"),
-                      _pollutant("0.1", "SO2"),
-                      _pollutant("16.6", "NO2"),
-                      _pollutant("8.5", "O3"),
-                      _pollutant("0.8", "CO"),
+                      _pollutant(formatValue(city.aqd.pm25), "PM2.5"),
+                      _pollutant(formatValue(city.aqd.pm10), "PM10"),
+                      _pollutant(formatValue(city.aqd.so2), "SO2"),
+                      _pollutant(formatValue(city.aqd.no2), "NO2"),
+                      _pollutant(formatValue(city.aqd.o3), "O3"),
+                      _pollutant(formatValue(city.aqd.co), "CO"),
                     ],
                   )
                 ],
