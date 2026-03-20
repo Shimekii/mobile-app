@@ -38,7 +38,7 @@ class AqiDetailsScreen extends StatelessWidget {
       return Scaffold(body: Center(child: Text("Нет данных")));
     }
 
-    final aqi = city.aqd.aqi;
+    final aqi = city.aqd.currentAqi;
 
     return Scaffold(
       backgroundColor: Colors.black,
