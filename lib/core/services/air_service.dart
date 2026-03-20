@@ -22,6 +22,51 @@ class AirCurrentData {
 }
 
 class AirService {
+  Future<AirCurrentData?> fetchCurrentDetails(double lat, double lon) async {
+  try {
+    final url = Uri.https(
+      'air-quality-api.open-meteo.com',
+      '/v1/air-quality',
+      {
+        'latitude': lat.toString(),
+        'longitude': lon.toString(),
+        'current':
+            'us_aqi,pm2_5,pm10,carbon_monoxide,nitrogen_dioxide,sulphur_dioxide,ozone',
+        'timezone': 'auto',
+      },
+    );
+
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+
+      if (data['current'] != null && data['current'].isNotEmpty) {
+        final current = data['current'];
+
+        return AirCurrentData(
+          usAqi: ((current['us_aqi'] as num?) ?? 0).round(),
+          pm25: (current['pm2_5'] as num?)?.toDouble(),
+          pm10: (current['pm10'] as num?)?.toDouble(),
+          co: (current['carbon_monoxide'] as num?)?.toDouble(),
+          no2: (current['nitrogen_dioxide'] as num?)?.toDouble(),
+          so2: (current['sulphur_dioxide'] as num?)?.toDouble(),
+          o3: (current['ozone'] as num?)?.toDouble(),
+        );
+      } else {
+        print("Текущие детальные данные о воздухе не найдены");
+        return null;
+      }
+    } else {
+      print("Ошибка сервера при получении детальных данных: ${response.statusCode}");
+      return null;
+    }
+  } catch (e) {
+    print("Ошибка при получении детальных данных: $e");
+    return null;
+  }
+}
+  
   Future<int?> fetchCurrent(double lat, double lon) async {
     try{
       final url = Uri.https(
