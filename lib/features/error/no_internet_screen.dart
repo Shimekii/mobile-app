@@ -66,7 +66,9 @@ class _NoInternetScreenState extends State<NoInternetScreen>{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+             Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child:  Text(
                 "Отсутствует подключение к интернету",
                 style: TextStyle(
                   fontSize: 32,
@@ -74,7 +76,8 @@ class _NoInternetScreenState extends State<NoInternetScreen>{
                   decoration: TextDecoration.underline,
                 ),
                 textAlign: TextAlign.center,
-              )
+              ),
+             )
             ],
           )
 
