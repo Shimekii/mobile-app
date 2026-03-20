@@ -127,6 +127,46 @@ class AqiDetailsScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 20),
+
+            // текст (скролл)
+            Expanded(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    Text(
+                      "Сведения о качестве воздуха",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+
+                    SizedBox(height: 12),
+
+                    Text(
+                      """AQI (Air Quality Index) — это интегральный показатель, который отражает общее состояние атмосферного воздуха.
+
+0–50 — Хороший  
+51–100 — Умеренный  
+101–150 — Нездоровый для чувствительных групп  
+151–200 — Нездоровый  
+201+ — Опасный  
+
+PM2.5 — мелкие частицы  
+PM10 — пыль  
+SO₂ — диоксид серы  
+NO₂ — диоксид азота  
+O₃ — озон  
+CO — угарный газ""",
+                      style: TextStyle(color: Colors.white70),
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
