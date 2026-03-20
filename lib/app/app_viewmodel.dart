@@ -4,14 +4,14 @@ import 'package:air_check/core/repositories/air_quality_data.dart';
 import 'package:air_check/core/repositories/air_repository.dart';
 import 'package:air_check/core/repositories/city_repository.dart';
 import 'package:air_check/core/repositories/location_repository.dart';
-import 'package:air_check/core/services/connectivity_service.dart';
+import 'package:air_check/core/repositories/connectivity_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 
 class AppViewModel extends ChangeNotifier {
   final LocationRepository locationRepository = LocationRepository();
-  final ConnectivityService connectivityService = ConnectivityService();
+  final ConnectivityRepository connectivityRepository = ConnectivityRepository();
   final AirRepository airRepository = AirRepository();
   final CityRepository cityRepository = CityRepository();
 
@@ -29,7 +29,7 @@ class AppViewModel extends ChangeNotifier {
   Future<void> initializeApp() async {
     // Имитируем загрузку
     await Future.delayed(Duration(seconds: 2));
-    hasInternet = await connectivityService.hasInternet();
+    hasInternet = await connectivityRepository.hasInternet();
     final prefs = await SharedPreferences.getInstance();
     _isFirstLaunch = prefs.getBool('isFirstLaunch') ?? true;
 
