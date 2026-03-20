@@ -1,6 +1,26 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+class AirCurrentData {
+  final int usAqi;
+  final double? pm25;
+  final double? pm10;
+  final double? so2;
+  final double? no2;
+  final double? o3;
+  final double? co;
+
+  AirCurrentData({
+    required this.usAqi,
+    this.pm25,
+    this.pm10,
+    this.so2,
+    this.no2,
+    this.o3,
+    this.co,
+  });
+}
+
 class AirService {
   Future<int?> fetchCurrent(double lat, double lon) async {
     try{
