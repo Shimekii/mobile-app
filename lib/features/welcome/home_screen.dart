@@ -2,6 +2,7 @@ import 'package:air_check/app/app_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../select_city/tracked_cities_screen.dart';
+import 'aqi_details_screen.dart';
 
 Color getAqiColor(int aqi) {
   if (aqi <= 50) return Colors.green.withValues(alpha: 0.8);
