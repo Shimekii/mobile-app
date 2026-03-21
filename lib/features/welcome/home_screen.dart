@@ -2,6 +2,7 @@ import 'package:air_check/app/app_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../select_city/tracked_cities_screen.dart';
+import '../aqi_details/aqi_details_screen.dart';
 
 Color getAqiColor(int aqi) {
   if (aqi <= 50) return Colors.green.withValues(alpha: 0.8);
@@ -96,29 +97,36 @@ class _MainHomeContent extends StatelessWidget {
                             // Колонка справа с индикатором и подписью AQI
                             Column(
                               mainAxisSize: MainAxisSize.min,
-                              //crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(height: 32),
                                 // Индикатор качества воздуха
-                                Container(
-                                  padding: EdgeInsets.symmetric(
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => AqiDetailsScreen(),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
                                       vertical: 2,
-                                      horizontal: 10
-                                  ),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(50),
-                                      color: getAqiColor(aqi)
-                                  ),
-                                  child:
-                                  Text(
-                                    getAqiLabel(aqi),
-                                    style:
-                                    TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.white,
+                                      horizontal: 10,
                                     ),
-                                  ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: getAqiColor(aqi),
+                                    ),
+                                    child: Text(
+                                      getAqiLabel(aqi),
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  )
                                 ),
 
                                 // Фиксированный отступ между индикатором и подписью AQI
